@@ -12,20 +12,26 @@ var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
     + "&apiKey=" + apiKey)
 
     .then(function(response) {
-    response.json().then(function(data) {
-    console.log(data)
-
-    .then(function(response) {
-    if (response.data.length === 0) {
-        console.log('Spoonacular could not find anything for that.');    
-
-    } else {
-        console.log(response.data.pairedWines[0])
-    }
-})
-    .catch(function(error) {
-    alert('Unable to connect to Spoonacular');
+    return response.json();
     })
+    
+    .then(function(data) {
+    let wineDescription = data['pairingText'];
+    let display = document.createElement("div");
+    display.innerHTML = wineDescription;
+    console.log(wineDescription);
+    })
+    }
+    // if (response.data.length === 0) {
+    //     console.log('Spoonacular could not find anything for that.');    
+
+    // } else {
+    //     console.log(response.data.pairedWines[0])
+    // }
+
+    // .catch(function(error) {
+    // alert('Unable to connect to Spoonacular');
+    // })
 //
     // .then(function(response) {
     // // request was successful
@@ -40,8 +46,8 @@ var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
     // cuisineQuery.innerHTML = cuisineQueryvalue;
     // let display = document.createElement("div");
     // display.appendChild(cuisineQuery);
-    });
-    })
+    
+
     // });
     // } else {
     // alert('Error: ' + response.statusText);
@@ -50,8 +56,8 @@ var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
     // .catch(function(error) {
     // alert('Unable to connect to Spoonacular');
     // })
-}
 
+    
     var tastyCall = function() {
         console.log("ringing tastyCall");
     }
@@ -59,7 +65,7 @@ var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
   
 //event handler for search by dish/keyword
 //event handler for cook button
-$("#cook").on("click", function() {
+document.querySelector("#cook").addEventListener("click", function() {
     spoonacularCall();
     tastyCall();
 });

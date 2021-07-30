@@ -26,7 +26,7 @@ var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
     .catch(function(error) {
     alert('Unable to connect to Spoonacular');
     })
-
+//
     // .then(function(response) {
     // // request was successful
     // // if (response.ok) {

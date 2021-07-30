@@ -2,6 +2,7 @@
 var selectedCuisine = document.getElementById("cuisine");
 var searchDish = document.getElementById("keyword") //need to create text input field in HTML
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
+var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5"
 
 // Spoonacular and Tasty API Call Function
 var spoonacularCall = function() { 

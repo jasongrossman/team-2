@@ -22,6 +22,7 @@ body {
   padding-top: auto;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 .dropdown {
   display: flex;
   justify-content: center;
@@ -35,8 +36,20 @@ body {
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
+  cursor: pointer;
   border-color: #003049;
   background-color: #003049;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
+  box-shadow: 0 4px rgb(128, 121, 121);
+}
+
+.button:hover {
+  background-color: #3e8e41
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
 }

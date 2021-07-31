@@ -1,6 +1,28 @@
 body {
   background-color: rgb(255, 255, 255);
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+
+.mid-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
+  background-size: cover;
+  background-position: center;   
+  background-attachment: fixed;
+  
+  
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -9,12 +31,17 @@ body {
   width: 500px;
   border-radius: 20px;
   justify-content: center;
-  background-color: #ff6d00;
+  background-color: rgba(255, 109, 0, 0.8);
 }
 .header {
   display: flex;
   justify-content: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.header h1 {
+  padding: 0px 5px;
+  text-align: center;
 }
 
 .intro {
@@ -53,4 +80,17 @@ body {
   background-color: #3e8e41;
   box-shadow: 0 3px #666;
   transform: translateY(2px);
+}
+
+#icon-text {
+  display: flex;
+  background-color:  rgba(255, 109, 0, 0.8);
+  border-radius: 10px;
+  height: 75%;
+  align-items: center;
+}
+
+#icon-text h2 {
+  padding-left: 5px;
+  padding-right: 5px;
 }

@@ -7,28 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    
 </head>
 
 <body>
-    <div id="container" hidden="true">
-        <header class="header">
-            <h1>What are you feeling like today?</h1>
-        </header>
-        <div class="dropdown" hidden="true">
-            <select class="cuisine" id="cuisine">Cuisine
-                <option value="Indian">Indian</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Mediterranean">Mediterranean</option>
-                <option value="Japanese">Japanese</option>
-                <option value="Random">Random</option>
-            </select>
+    <nav>
+        <div>
+            <div id="icon-text">
+               <h2><ion-icon name="fast-food"></ion-icon>foodieLove</h2>
+            </div>
         </div>
-        <div class="intro">
-            <button class="button">Dine Out</button>
-            <button class="button" id="cook">Cook</button>
+    </nav>
+    <section class="mid-section">
+        <div id="container" hidden="true">
+            <header class="header">
+                <h1>Hello, what do you feel like cooking today?</h1>
+            </header>
+            <div class="dropdown" hidden="true">
+                <select class="cuisine" id="cuisine" placeholder="Select Cuisine">
+                    <option value="" disabled selected>Choose a Cuisine</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Random">Random</option>
+                </select>
+            </div>
+            <div class="intro">
+                    <button class="button" id="cook">Generate Recipe</button>
+            </div>
         </div>
+    </section>    
+    
 
-    </div>
+    <!-- The links below are for the fast-food icon at the top -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- The links above are for the fast-food icon at the top -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>     -->

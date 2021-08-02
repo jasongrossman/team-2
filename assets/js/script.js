@@ -7,6 +7,7 @@ var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5"
 // Spoonacular and Tasty API Call Function
 var spoonacularCall = function() { 
 
+    
     var cuisineQuery = selectedCuisine.value;
     // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
     fetch("https://api.spoonacular.com/food/wine/pairing" +
@@ -21,10 +22,18 @@ var spoonacularCall = function() {
     })
     
     .then(function(data) {
-        let wineDescription = data['pairingText'];
-        let display = document.createElement("div");
-        display.innerHTML = wineDescription;
-        console.log(wineDescription);
+        console.log(data);
+        //create container to hold wine pairing response:
+        var winePairing = document.createElement("div");
+        winePairing.addClass = "wine-pairing"
+        var wineChoice = document.createElement("h2");
+        wineChoice.textContent = "Recommended Wine Pairing: " + data.pairedWines[0]
+        var wineDescription = document.createElement("p");
+        wineDescription.textContent = data.pairingText;
+        winePairing.appendChild(wineChoice);
+        winePairing.appendChild(wineDescription);
+        document.querySelector("body").append(winePairing);
+
     })
         // Make a fetch request to Tasty API for recipes based on user input
         return fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes", {
@@ -36,45 +45,8 @@ var spoonacularCall = function() {
             })
             .then(function(response) {
                 return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
     })
 }
-    // if (response.data.length === 0) {
-    //     console.log('Spoonacular could not find anything for that.');    
-
-    // } else {
-    //     console.log(response.data.pairedWines[0])
-    // }
-
-    // .catch(function(error) {
-    // alert('Unable to connect to Spoonacular');
-    // })
-//
-    // .then(function(response) {
-    // // request was successful
-    // // if (response.ok) {
-    // // console.log(response);
-    // response.json().then(function(data) {
-    // console.log(data)
-
-    // .then(function(data){ 
-    //     console.log(data);
-    // let cuisineQueryvalue = data['pairedWines'][0];
-    // cuisineQuery.innerHTML = cuisineQueryvalue;
-    // let display = document.createElement("div");
-    // display.appendChild(cuisineQuery);
-    
-
-    // });
-    // } else {
-    // alert('Error: ' + response.statusText);
-    // }
-    // })
-    // .catch(function(error) {
-    // alert('Unable to connect to Spoonacular');
-    // })
 
     
     var tastyCall = function() {

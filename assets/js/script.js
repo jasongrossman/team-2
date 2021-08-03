@@ -26,7 +26,7 @@ var spoonacularCall = function() {
         console.log(data);
         //create container to hold wine pairing response:
         var winePairing = document.createElement("div");
-        winePairing.addClass = "wine-pairing"
+        winePairing.setAttribute("class", "wine-pairing");
         var wineChoice = document.createElement("h2");
         wineChoice.textContent = "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
         var wineDescription = document.createElement("p");
@@ -38,14 +38,18 @@ var spoonacularCall = function() {
         wineDetails.textContent = data.productMatches[0].description;
         winePairing.appendChild(wineDetails);
         // Wine logo
+        var wineImgDiv = document.createElement("div");
+        wineImgDiv.setAttribute("class", "wine-img");
         var wineImg = document.createElement("img");
         wineImg.setAttribute("src", data.productMatches[0].imageUrl);
-        winePairing.appendChild(wineImg);
+        winePairing.appendChild(wineImgDiv);
+        wineImgDiv.appendChild(wineImg);
         // Link to order wine
         var wineLink = document.createElement("a");
         wineLink.setAttribute("href", data.productMatches[0].link);
-        wineLink.innerHTML = "ORDER YOUR WINE";
+        wineLink.innerHTML = "ORDER YOUR WINE HERE";
         winePairing.appendChild(wineLink);
+        open.window(wineLink);
         document.querySelector("body").append(winePairing);
     })
 }
@@ -70,7 +74,7 @@ var spoonacularCall = function() {
             console.log(data);
             //create container to hold recipe information
             var recipeContainer = document.createElement("div");
-            recipeContainer.addClass = "recipe-container";
+            recipeContainer.setAttribute("class", "recipe-container");
             var recipeName = document.createElement("h2");
             recipeName.textContent = "TRY THIS RECIPE: " + data.results[0].name.toUpperCase();
             recipeContainer.appendChild(recipeName);
@@ -78,6 +82,7 @@ var spoonacularCall = function() {
 
             // Image of recipe
             var recipeImg = document.createElement("img");
+            recipeImg.setAttribute("class", "recipe-img");
             recipeImg.setAttribute("src", data.results[0].thumbnail_url);
             recipeContainer.appendChild(recipeImg);
 

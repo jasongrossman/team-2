@@ -88,7 +88,7 @@ var spoonacularCall = function() {
 
             //retrieve cooking time, servings and ingredient list
             var cookingTime = document.createElement("h4");
-            cookingTime.addClass = "cooking-time";
+            cookingTime.setAttribute("class", "cooking-time");
             cookingTime.textContent = "Cooking time: " + data.results[0].cook_time_minutes + " minutes";
             recipeContainer.appendChild(cookingTime);
             var servings = document.createElement("h4");
@@ -96,7 +96,7 @@ var spoonacularCall = function() {
             cookingTime.appendChild(servings);
 
             var recipeIngredients = document.createElement("ul");
-            recipeIngredients.addClass = "recipe-ingredients";
+            recipeIngredients.setAttribute("class", "recipe-ingredients");
             recipeIngredients.textContent = "Ingredients:";
 
             for (i=0; i<data.results[0].sections[0].components.length; i++) {
@@ -117,12 +117,12 @@ var spoonacularCall = function() {
 
             //create list to add recipe instructions
             var recipeInstructions = document.createElement("ul");
-            recipeInstructions.addClass = "recipe-instructions";
+            recipeInstructions.setAttribute("class", "recipe-instructions");
             recipeInstructions.textContent = "Instructions:"
 
             for (i=0; i<data.results[0].instructions.length; i++) {
                 var recipeInstructionLi = document.createElement("li");
-                recipeInstructionLi.addClass = "recipe-instruction-li";
+                recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
                 recipeInstructionLi.textContent = data.results[0].instructions[i].display_text;
                 recipeInstructions.appendChild(recipeInstructionLi);
             }

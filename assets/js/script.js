@@ -7,7 +7,6 @@ var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5"
 var cuisineQuery = "";
 
 
-
 // Spoonacular and Tasty API Call Function
 var spoonacularCall = function() { 
 
@@ -70,47 +69,41 @@ var spoonacularCall = function() {
             
         .then(function(data) {
             console.log(data);
-
-            //create randomizer to select a random recipe from returned search results
-            var randomizer = Math.floor(Math.random() * data.results.length);
-            console.log(randomizer);
-            console.log(data.results.length);
-            
             //create container to hold recipe information
             var recipeContainer = document.createElement("div");
             recipeContainer.addClass = "recipe-container";
             var recipeName = document.createElement("h2");
-            recipeName.textContent = "TRY THIS RECIPE: " + data.results[randomizer].name.toUpperCase();
+            recipeName.textContent = "TRY THIS RECIPE: " + data.results[0].name.toUpperCase();
             recipeContainer.appendChild(recipeName);
             document.querySelector("body").append(recipeContainer);
 
             // Image of recipe
             var recipeImg = document.createElement("img");
             recipeImg.addClass = "recipe-img";
-            recipeImg.setAttribute("src", data.results[randomizer].thumbnail_url);
+            recipeImg.setAttribute("src", data.results[0].thumbnail_url);
             recipeContainer.appendChild(recipeImg);
 
             //retrieve cooking time, servings and ingredient list
             var cookingTime = document.createElement("h4");
             cookingTime.addClass = "cooking-time";
-            cookingTime.textContent = "Cooking time: " + data.results[randomizer].cook_time_minutes + " minutes";
+            cookingTime.textContent = "Cooking time: " + data.results[0].cook_time_minutes + " minutes";
             recipeContainer.appendChild(cookingTime);
             var servings = document.createElement("h4");
-            servings.textContent = "Servings: " + data.results[randomizer].num_servings;
+            servings.textContent = "Servings: " + data.results[0].num_servings;
             cookingTime.appendChild(servings);
 
             var recipeIngredients = document.createElement("ul");
             recipeIngredients.addClass = "recipe-ingredients";
             recipeIngredients.textContent = "Ingredients:";
 
-            for (i=0; i<data.results[randomizer].sections[0].components.length; i++) {
+            for (i=0; i<data.results[0].sections[0].components.length; i++) {
                 var recipeIngredientLi = document.createElement("li");
                 recipeIngredientLi.addClass = "recipe-ingredient-li";
-                recipeIngredientLi.textContent = data.results[randomizer].sections[0].components[i].ingredient.name + ": ";
+                recipeIngredientLi.textContent = data.results[0].sections[0].components[i].ingredient.name + ": ";
                 var recipeIngredientMeasure = document.createElement("span");
                 //if ingredient measurement = 0, then display "to taste" instead of 0 quantity.
-                if (data.results[randomizer].sections[0].components[i].measurements[0].quantity > 0) {
-                    recipeIngredientMeasure.textContent = data.results[randomizer].sections[0].components[i].measurements[0].quantity + " " + data.results[randomizer].sections[0].components[i].measurements[0].unit.abbreviation;
+                if (data.results[0].sections[0].components[i].measurements[0].quantity > 0) {
+                    recipeIngredientMeasure.textContent = data.results[0].sections[0].components[i].measurements[0].quantity + " " + data.results[0].sections[0].components[i].measurements[0].unit.abbreviation;
                 } else {
                     recipeIngredientMeasure.textContent = "to taste."
                 }
@@ -124,10 +117,10 @@ var spoonacularCall = function() {
             recipeInstructions.addClass = "recipe-instructions";
             recipeInstructions.textContent = "Instructions:"
 
-            for (i=0; i<data.results[randomizer].instructions.length; i++) {
+            for (i=0; i<data.results[0].instructions.length; i++) {
                 var recipeInstructionLi = document.createElement("li");
                 recipeInstructionLi.addClass = "recipe-instruction-li";
-                recipeInstructionLi.textContent = data.results[randomizer].instructions[i].display_text;
+                recipeInstructionLi.textContent = data.results[0].instructions[i].display_text;
                 recipeInstructions.appendChild(recipeInstructionLi);
             }
             console.log(recipeInstructions);
@@ -139,14 +132,14 @@ var spoonacularCall = function() {
     };
 //event handler for search by dish/keyword
 //event handler for cook button
-document.querySelector("#cuisine-search").addEventListener("click", function() {
+document.querySelector("#cook").addEventListener("click", function() {
     cuisineQuery = selectedCuisine.value;
-    tastyCall();
     spoonacularCall();
+    tastyCall();
 });
 
-document.querySelector("#keyword-search").addEventListener("click", function() {
+document.querySelector("#keyword").addEventListener("click", function() {
     cuisineQuery = selectedKeyword.value;
-    tastyCall();
     spoonacularCall();
+    tastyCall();
 });

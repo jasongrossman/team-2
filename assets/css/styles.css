@@ -94,7 +94,6 @@ nav {
   transform: translateY(2px);
 }
 
-<<<<<<< HEAD
 h2,
 p {
   font-family: 'Hind', sans-serif;
@@ -148,7 +147,6 @@ a {
   color: #e76f51;
 }
 
-=======
 #icon-text {
   display: flex;
   background-color:  rgba(255, 109, 0, 0.8);
@@ -175,4 +173,3 @@ a {
   align-items: center;
   padding: 7px 7px;
 }
->>>>>>> 00480ac72ffd0d1a3707806debd4b91a08c423d5

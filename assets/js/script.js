@@ -50,7 +50,6 @@ var spoonacularCall = function() {
         wineLink.setAttribute("href", data.productMatches[0].link);
         wineLink.innerHTML = "ORDER YOUR WINE HERE";
         winePairing.appendChild(wineLink);
-        open.window(wineLink);
         document.querySelector("body").append(winePairing);
     })
 }
@@ -83,11 +82,7 @@ var spoonacularCall = function() {
 
             // Image of recipe
             var recipeImg = document.createElement("img");
-<<<<<<< HEAD
             recipeImg.setAttribute("class", "recipe-img");
-=======
-            recipeImg.addClass = "recipe-img";
->>>>>>> 00480ac72ffd0d1a3707806debd4b91a08c423d5
             recipeImg.setAttribute("src", data.results[0].thumbnail_url);
             recipeContainer.appendChild(recipeImg);
 

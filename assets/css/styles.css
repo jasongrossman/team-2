@@ -2,7 +2,7 @@
 {
     --primary-color: #4E598C;
     --secondary-color: #FF8C42;
-    /* --tertiary-color: #39a6b2; */
+    --tertiary-color: #FCAF58; 
 }
 
 body {
@@ -48,7 +48,7 @@ nav {
 .header {
   display: flex;
   justify-content: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Roboto";
 }
 
 .header h1 {
@@ -60,7 +60,14 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Roboto";
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .dropdown {
@@ -68,29 +75,28 @@ nav {
   justify-content: center;
   padding-top: 10px;
   margin: 5px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  
   padding-bottom: 10px;
 }
 
 .button {
   padding: 10px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  border-color: #003049;
   background-color: var(--primary-color);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Roboto";
   color: white;
-  box-shadow: 0 4px rgb(128, 121, 121);
+  
 }
 
 .button:hover {
-  background-color: #3e8e41
+  background-color: var(--tertiary-color)
 }
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 3px #666;
+  background-color: var(--secondary-color);
+  
   transform: translateY(2px);
 }
 
@@ -114,9 +120,14 @@ nav {
   justify-content: center;
 }
 
+#top-right-icons:hover {
+  opacity: 80%;
+  color: #F9C784;
+}
+
 #top-right-icons i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7px 7px;
+  padding: 12px 12px;
 }

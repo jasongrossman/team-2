@@ -6,50 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to CSS Style Sheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
+    
 </head>
 
 <body>
-    <div id="container" hidden="true">
-        <header class="header">
-            <h1>What are you feeling like today?</h1>
-        </header>
-        <div class = "search">
-            <form class="keyword">
-                <label class="search-header">Search by Keyword</label>
-                <input class = "keyword-search" type="text" autofocus="true" id="keyword-input" >
-
-            </form>
+    <nav>
+        <div id="site-icon">
+            <h2 style="color:white">foodieLove</h2>
         </div>
-        <div class="dropdown" hidden="true">
-            <select class="cuisine" id="cuisine">Cuisine
-                <option value="African">African</option>
-                <option value="American">American</option>
-                <option value="British">British</option>
-                <option value="Cajun">Cajun</option>
-                <option value="Caribbean">Caribbean</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Greek">Greek</option>
-                <option value="French">French</option>
-                <option value="German">German</option>
-                <option value="Italian">Italian</option>
-                <option value="Indian">Indian</option>
-                <option value="Japanese">Japanese</option>
-                <option value="Korean">Korean</option>
-                <option value="Latin-American">Latin American (Food only)</option>
-                <option value="Mediterranean">Mediterranean</option>
-                <option value="Mexican">Mexican</option>
-                <option value="Middle-Eastern">Middle Eastern (Food only)</option>
-                <option value="Spanish">Spanish</option>
-                <option value="Thai">Thai</option>
-                <option value="Vietnamese">Vietnamese</option>
-                <option value="Random">Random</option>
-            </select>
+        <div id="top-right-icons">
+            <i class="fas fa-home">Home</i>
+            <i class="fas fa-book">Recipes</i>
+            <i class="fas fa-wine-glass-alt">Wine Pairings</i>
         </div>
-        <div class="intro">
-            <button class="button" id="keyword">Search by keyword</button>
-            <button class="button" id="cook">Cook</button>
-        </div>
+    </nav>
+    <section class="mid-section">
+    
+        <div id="container" hidden="true">
+            <header class="header">
+                <h1>What are you feeling like today?</h1>
+            </header>
+            <div class = "search">
+                <form class="keyword">
+                    <label class="search-header">Search by Keyword</label>
+                    <input class = "keyword-search" type="text" autofocus="true" id="keyword-input" >
+                </form>
+            </div>
+            <div class="dropdown" hidden="true">
+                <select class="cuisine" id="cuisine">
+                    <option value="" disabled selected>Choose a Cuisine</option>
+                    <option value="African">African</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                    <option value="Cajun">Cajun</option>
+                    <option value="Caribbean">Caribbean</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Greek">Greek</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin-American">Latin American (Food only)</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Middle-Eastern">Middle Eastern (Food only)</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Random">Random</option>
+                </select>
+            </div>
+            <div class="intro">
+                <button class="button" id="keyword">Search by keyword</button>
+                <button class="button" id="cook">Cook</button>
+            </div>
+    </section>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

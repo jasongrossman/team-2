@@ -53,3 +53,57 @@ body {
   box-shadow: 0 3px #666;
   transform: translateY(2px);
 }
+
+h2,
+p {
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+}
+
+h2 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 35px;
+  color: #3c096c;
+}
+
+p, li{
+  font-size: 20px;
+  font-family: 'Hind', sans-serif;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+}
+
+/* Wine and Recipe Img */
+.wine-img,
+.recipe-img {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
+  border-radius: 10px;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.recipe-img {
+  width: 75%;
+  margin-bottom: 30px;
+}
+
+/* Wine link */
+a {
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    padding: 25px;
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-container h2 {
+  color: #e76f51;
+}
+

@@ -10,23 +10,26 @@
 </head>
 
 <body>
-    <div id="container" hidden="true">
-        <header class="header">
-            <h1>What are you feeling like today?</h1>
-        </header>
-        <div class="dropdown" hidden="true">
-            <select class="cuisine" id="cuisine">Cuisine
-                <option value="Indian">Indian</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Mediterranean">Mediterranean</option>
-                <option value="Japanese">Japanese</option>
-                <option value="Random">Random</option>
-            </select>
+    <section class="mid-section">
+        <div id="container" hidden="true">
+            <header class="header">
+                <h1>Hello, what do you feel like cooking today?</h1>
+            </header>
+            <div class="dropdown" hidden="true">
+                <select class="cuisine" id="cuisine" placeholder="Select Cuisine">
+                    <option value="" disabled selected>Choose a Cuisine</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Random">Random</option>
+                </select>
+            </div>
+            <div class="intro">
+                    <button class="button" id="cook">Generate Recipe</button>
+            </div>
         </div>
-        <div class="intro">
-            <button class="button">Dine Out</button>
-            <button class="button" id="cook">Cook</button>
-        </div>
+    </section>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -1,15 +1,16 @@
 //global variable declarations
 var selectedCuisine = document.getElementById("cuisine");
+var selectedKeyword = document.getElementById("keyword-input");
 var searchDish = document.getElementById("keyword") //need to create text input field in HTML
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
 var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5"
 var cuisineQuery = "";
 
+
 // Spoonacular and Tasty API Call Function
 var spoonacularCall = function() { 
 
     
-    cuisineQuery = selectedCuisine.value;
     // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
     fetch("https://api.spoonacular.com/food/wine/pairing" +
         "?food=" +
@@ -85,7 +86,7 @@ var spoonacularCall = function() {
             //retrieve cooking time, servings and ingredient list
             var cookingTime = document.createElement("h4");
             cookingTime.addClass = "cooking-time";
-            cookingTime.textContent = "Cooking time: " + data.results[0].cook_time_minutes;
+            cookingTime.textContent = "Cooking time: " + data.results[0].cook_time_minutes + " minutes";
             recipeContainer.appendChild(cookingTime);
             var servings = document.createElement("h4");
             servings.textContent = "Servings: " + data.results[0].num_servings;
@@ -132,6 +133,13 @@ var spoonacularCall = function() {
 //event handler for search by dish/keyword
 //event handler for cook button
 document.querySelector("#cook").addEventListener("click", function() {
+    cuisineQuery = selectedCuisine.value;
+    spoonacularCall();
+    tastyCall();
+});
+
+document.querySelector("#keyword").addEventListener("click", function() {
+    cuisineQuery = selectedKeyword.value;
     spoonacularCall();
     tastyCall();
 });

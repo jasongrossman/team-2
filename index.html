@@ -14,6 +14,13 @@
         <header class="header">
             <h1>What are you feeling like today?</h1>
         </header>
+        <div class = "search">
+            <form class="keyword">
+                <label class="search-header">Search by Keyword</label>
+                <input class = "keyword-search" type="text" autofocus="true" id="keyword-input" >
+
+            </form>
+        </div>
         <div class="dropdown" hidden="true">
             <select class="cuisine" id="cuisine">Cuisine
                 <option value="African">African</option>
@@ -40,7 +47,7 @@
             </select>
         </div>
         <div class="intro">
-            <button class="button">Dine Out</button>
+            <button class="button" id="keyword">Search by Keywork</button>
             <button class="button" id="cook">Cook</button>
         </div>
 

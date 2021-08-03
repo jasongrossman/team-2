@@ -2,7 +2,7 @@
 {
     --primary-color: #4E598C;
     --secondary-color: #FF8C42;
-    --tertiary-color: #39a6b2;
+    /* --tertiary-color: #39a6b2; */
 }
 
 body {
@@ -12,10 +12,17 @@ body {
 nav {
   display: flex;
   flex-direction: row;
-  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
-  background-size: cover;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  height: 80px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
+  /* background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   
 }
 
@@ -36,7 +43,7 @@ nav {
   width: 500px;
   border-radius: 20px;
   justify-content: center;
-  background-color: rgba(255, 109, 0, 0.8);
+  background-color: var(--secondary-color);
 }
 .header {
   display: flex;
@@ -71,7 +78,7 @@ nav {
   border-radius: 10px;
   cursor: pointer;
   border-color: #003049;
-  background-color: #003049;
+  background-color: var(--primary-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
   box-shadow: 0 4px rgb(128, 121, 121);
@@ -98,4 +105,18 @@ nav {
 #icon-text h2 {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#top-right-icons {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+}
+
+#top-right-icons i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 7px;
 }

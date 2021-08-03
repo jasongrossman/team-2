@@ -6,19 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
     
 </head>
 
 <body>
     <nav>
-
+        <div id="site-icon">
+            <h2 style="color:white">foodieLove</h2>
+        </div>
+        <div id="top-right-icons">
+            <i class="fas fa-home">Home</i>
+            <i class="fas fa-book">Recipes</i>
+            <i class="fas fa-wine-glass-alt">Wine Pairings</i>
+        </div>
     </nav>
     <section class="mid-section">
         <div id="container" hidden="true">
-            <header class="header">
+            <div class="header">
                 <h1>Hello, what do you feel like cooking today?</h1>
-            </header>
+            </div>
             <div class="dropdown" hidden="true">
                 <select class="cuisine" id="cuisine" placeholder="Select Cuisine">
                     <option value="" disabled selected>Choose a Cuisine</option>

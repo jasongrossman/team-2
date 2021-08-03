@@ -28,14 +28,28 @@ var spoonacularCall = function() {
         var winePairing = document.createElement("div");
         winePairing.addClass = "wine-pairing"
         var wineChoice = document.createElement("h2");
-        wineChoice.textContent = "Recommended Wine Pairing: " + data.pairedWines[0]
+        wineChoice.textContent = "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
         var wineDescription = document.createElement("p");
         wineDescription.textContent = data.pairingText;
         winePairing.appendChild(wineChoice);
         winePairing.appendChild(wineDescription);
+        // Details of wine pairing
+        var wineDetails = document.createElement("p");
+        wineDetails.textContent = data.productMatches[0].description;
+        winePairing.appendChild(wineDetails);
+        // Wine logo
+        var wineImg = document.createElement("img");
+        wineImg.setAttribute("src", data.productMatches[0].imageUrl);
+        winePairing.appendChild(wineImg);
+        // Link to order wine
+        var wineLink = document.createElement("a");
+        wineLink.setAttribute("href", data.productMatches[0].link);
+        wineLink.innerHTML = "ORDER YOUR WINE";
+        winePairing.appendChild(wineLink);
         document.querySelector("body").append(winePairing);
     })
-    }
+}
+
     
     var tastyCall = function() {
         // Make a fetch request to Tasty API for recipes based on user input
@@ -58,9 +72,14 @@ var spoonacularCall = function() {
             var recipeContainer = document.createElement("div");
             recipeContainer.addClass = "recipe-container";
             var recipeName = document.createElement("h2");
-            recipeName.textContent = "Try this: " + data.results[0].name;
+            recipeName.textContent = "TRY THIS RECIPE: " + data.results[0].name.toUpperCase();
             recipeContainer.appendChild(recipeName);
             document.querySelector("body").append(recipeContainer);
+
+            // Image of recipe
+            var recipeImg = document.createElement("img");
+            recipeImg.setAttribute("src", data.results[0].thumbnail_url);
+            recipeContainer.appendChild(recipeImg);
 
             //create list to add recipe instructions
             var recipeInstructions = document.createElement("ul");
@@ -75,11 +94,9 @@ var spoonacularCall = function() {
             }
             document.querySelector("body").append(recipeInstructions);
 
-                
-            
 
-        });
-    })
+            });
+        })
     };
 //event handler for search by dish/keyword
 //event handler for cook button

@@ -16,33 +16,58 @@
 
 <body>
     <nav>
-        <div>
-            <div id="icon-text">
-                <h2><ion-icon name="fast-food"></ion-icon>foodieLove</h2>
-            </div>
+        <div id="site-icon">
+            <h2 style="color:white">foodieLove</h2>
+        </div>
+        <div id="top-right-icons">
+            <i class="fas fa-home">Home</i>
+            <i class="fas fa-book">Recipes</i>
+            <i class="fas fa-wine-glass-alt">Wine Pairings</i>
         </div>
     </nav>
     <section class="mid-section">
+    
         <div id="container" hidden="true">
             <header class="header">
-                <h1>Hello, what do you feel like cooking today?</h1>
+                <h1>What are you feeling like today?</h1>
             </header>
+            <div class = "search">
+                <form class="keyword">
+                    <label class="search-header">Search by Keyword</label>
+                    <input class = "keyword-search" type="text" autofocus="true" id="keyword-input" >
+                </form>
+            </div>
             <div class="dropdown" hidden="true">
-                <select class="cuisine" id="cuisine" placeholder="Select Cuisine">
+                <select class="cuisine" id="cuisine">
                     <option value="" disabled selected>Choose a Cuisine</option>
-                    <option value="Indian">Indian</option>
+                    <option value="African">African</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                    <option value="Cajun">Cajun</option>
+                    <option value="Caribbean">Caribbean</option>
                     <option value="Chinese">Chinese</option>
-                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Greek">Greek</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Indian">Indian</option>
                     <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin-American">Latin American (Food only)</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Middle-Eastern">Middle Eastern (Food only)</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Vietnamese">Vietnamese</option>
                     <option value="Random">Random</option>
                 </select>
             </div>
             <div class="intro">
-                    <button class="button" id="cook">Click for reciped of the day!</button>
+                <button class="button" id="keyword">Search by keyword</button>
+                <button class="button" id="cook">Cook</button>
             </div>
-        </div>
-    </section>    
-    
+    </section>
 
     <!-- The links below are for the fast-food icon at the top -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

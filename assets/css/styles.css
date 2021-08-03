@@ -1,19 +1,59 @@
-body {
-  background-color: white;
+:root 
+{
+    --primary-color: #4E598C;
+    --secondary-color: #FF8C42;
+    /* --tertiary-color: #39a6b2; */
 }
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  height: 80px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
+  /* background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+  
+}
+
+.mid-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
+  background-size: cover;
+  background-position: center;   
+  background-attachment: fixed;
+}
+
 #container {
-  display: block;
-  margin: auto;
-  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 15% auto;
   width: 500px;
   border-radius: 20px;
   justify-content: center;
-  background-color: #ff6d00;
+  background-color: var(--secondary-color);
 }
 .header {
   display: flex;
   justify-content: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.header h1 {
+  padding: 0px 5px;
+  text-align: center;
 }
 
 .intro {
@@ -38,7 +78,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   border-color: #003049;
-  background-color: #003049;
+  background-color: var(--primary-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
   box-shadow: 0 4px rgb(128, 121, 121);
@@ -54,6 +94,7 @@ body {
   transform: translateY(2px);
 }
 
+<<<<<<< HEAD
 h2,
 p {
   font-family: 'Hind', sans-serif;
@@ -107,3 +148,31 @@ a {
   color: #e76f51;
 }
 
+=======
+#icon-text {
+  display: flex;
+  background-color:  rgba(255, 109, 0, 0.8);
+  border-radius: 10px;
+  height: 75%;
+  align-items: center;
+}
+
+#icon-text h2 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#top-right-icons {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+}
+
+#top-right-icons i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 7px;
+}
+>>>>>>> 00480ac72ffd0d1a3707806debd4b91a08c423d5

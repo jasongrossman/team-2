@@ -7,54 +7,7 @@ var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5"
 var cuisineQuery = "";
 
 
-// Spoonacular and Tasty API Call Function
-var spoonacularCall = function() { 
-
-    
-    // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
-    fetch("https://api.spoonacular.com/food/wine/pairing" +
-        "?food=" +
-        cuisineQuery +
-        "&apiKey=" + 
-        apiKey
-        )
-
-    .then(function(response) {
-        return response.json();
-    })
-    
-    .then(function(data) {
-        console.log(data);
-        //create container to hold wine pairing response:
-        var winePairing = document.createElement("div");
-        winePairing.setAttribute("class", "wine-pairing");
-        var wineChoice = document.createElement("h2");
-        wineChoice.textContent = "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
-        var wineDescription = document.createElement("p");
-        wineDescription.textContent = data.pairingText;
-        winePairing.appendChild(wineChoice);
-        winePairing.appendChild(wineDescription);
-        // Details of wine pairing
-        var wineDetails = document.createElement("p");
-        wineDetails.textContent = data.productMatches[0].description;
-        winePairing.appendChild(wineDetails);
-        // Wine logo
-        var wineImgDiv = document.createElement("div");
-        wineImgDiv.setAttribute("class", "wine-img");
-        var wineImg = document.createElement("img");
-        wineImg.setAttribute("src", data.productMatches[0].imageUrl);
-        winePairing.appendChild(wineImgDiv);
-        wineImgDiv.appendChild(wineImg);
-        // Link to order wine
-        var wineLink = document.createElement("a");
-        wineLink.setAttribute("href", data.productMatches[0].link);
-        wineLink.innerHTML = "ORDER YOUR WINE HERE";
-        winePairing.appendChild(wineLink);
-        document.querySelector("body").append(winePairing);
-    })
-}
-
-    
+    // Tasty API Call Function
     var tastyCall = function() {
         // Make a fetch request to Tasty API for recipes based on user input
         fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes"
@@ -133,16 +86,64 @@ var spoonacularCall = function() {
             });
         })
     };
+
+// Spoonacular API Call Function
+var spoonacularCall = function() { 
+
+    
+    // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
+    fetch("https://api.spoonacular.com/food/wine/pairing" +
+        "?food=" +
+        cuisineQuery +
+        "&apiKey=" + 
+        apiKey
+        )
+
+    .then(function(response) {
+        return response.json();
+    })
+    
+    .then(function(data) {
+        console.log(data);
+        //create container to hold wine pairing response:
+        var winePairing = document.createElement("div");
+        winePairing.setAttribute("class", "wine-pairing");
+        var wineChoice = document.createElement("h2");
+        wineChoice.textContent = "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
+        var wineDescription = document.createElement("p");
+        wineDescription.textContent = data.pairingText;
+        winePairing.appendChild(wineChoice);
+        winePairing.appendChild(wineDescription);
+        // Details of wine pairing
+        var wineDetails = document.createElement("p");
+        wineDetails.textContent = data.productMatches[0].description;
+        winePairing.appendChild(wineDetails);
+        // Wine logo
+        var wineImgDiv = document.createElement("div");
+        wineImgDiv.setAttribute("class", "wine-img");
+        var wineImg = document.createElement("img");
+        wineImg.setAttribute("src", data.productMatches[0].imageUrl);
+        winePairing.appendChild(wineImgDiv);
+        wineImgDiv.appendChild(wineImg);
+        // Link to order wine
+        var wineLink = document.createElement("a");
+        wineLink.setAttribute("href", data.productMatches[0].link);
+        wineLink.innerHTML = "ORDER YOUR WINE HERE";
+        winePairing.appendChild(wineLink);
+        document.querySelector("body").append(winePairing);
+    })
+}
+
 //event handler for search by dish/keyword
 //event handler for cook button
 document.querySelector("#cook").addEventListener("click", function() {
     cuisineQuery = selectedCuisine.value;
-    spoonacularCall();
     tastyCall();
+    spoonacularCall();
 });
 
 document.querySelector("#keyword").addEventListener("click", function() {
     cuisineQuery = selectedKeyword.value;
-    spoonacularCall();
     tastyCall();
+    spoonacularCall();
 });

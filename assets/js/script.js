@@ -127,13 +127,13 @@ var spoonacularCall = function() {
         wineImgDiv.appendChild(wineImg);
         // Link to order wine
         var wineLink = document.createElement("a");
+        wineLink.setAttribute("class", "#wine");
         wineLink.setAttribute("href", data.productMatches[0].link);
         wineLink.innerHTML = "ORDER YOUR WINE HERE";
         winePairing.appendChild(wineLink);
         document.querySelector("body").append(winePairing);
     })
 }
-
 //event handler for search by dish/keyword
 //event handler for cook button
 document.querySelector("#cook").addEventListener("click", function() {

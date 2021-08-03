@@ -78,20 +78,51 @@ var spoonacularCall = function() {
 
             // Image of recipe
             var recipeImg = document.createElement("img");
+            recipeImg.addClass = "recipe-img";
             recipeImg.setAttribute("src", data.results[0].thumbnail_url);
             recipeContainer.appendChild(recipeImg);
+
+            //retrieve cooking time, servings and ingredient list
+            var cookingTime = document.createElement("h4");
+            cookingTime.addClass = "cooking-time";
+            cookingTime.textContent = "Cooking time: " + data.results[0].cook_time_minutes;
+            recipeContainer.appendChild(cookingTime);
+            var servings = document.createElement("h4");
+            servings.textContent = "Servings: " + data.results[0].num_servings;
+            cookingTime.appendChild(servings);
+
+            var recipeIngredients = document.createElement("ul");
+            recipeIngredients.addClass = "recipe-ingredients";
+            recipeIngredients.textContent = "Ingredients:";
+
+            for (i=0; i<data.results[0].sections[0].components.length; i++) {
+                var recipeIngredientLi = document.createElement("li");
+                recipeIngredientLi.addClass = "recipe-ingredient-li";
+                recipeIngredientLi.textContent = data.results[0].sections[0].components[i].ingredient.name + ": ";
+                var recipeIngredientMeasure = document.createElement("span");
+                //if ingredient measurement = 0, then display "to taste" instead of 0 quantity.
+                if (data.results[0].sections[0].components[i].measurements[0].quantity > 0) {
+                    recipeIngredientMeasure.textContent = data.results[0].sections[0].components[i].measurements[0].quantity + " " + data.results[0].sections[0].components[i].measurements[0].unit.abbreviation;
+                } else {
+                    recipeIngredientMeasure.textContent = "to taste."
+                }
+                recipeIngredientLi.appendChild(recipeIngredientMeasure);
+                recipeIngredients.appendChild(recipeIngredientLi);
+            }
+            document.querySelector("body").append(recipeIngredients);
 
             //create list to add recipe instructions
             var recipeInstructions = document.createElement("ul");
             recipeInstructions.addClass = "recipe-instructions";
+            recipeInstructions.textContent = "Instructions:"
 
             for (i=0; i<data.results[0].instructions.length; i++) {
                 var recipeInstructionLi = document.createElement("li");
                 recipeInstructionLi.addClass = "recipe-instruction-li";
                 recipeInstructionLi.textContent = data.results[0].instructions[i].display_text;
                 recipeInstructions.appendChild(recipeInstructionLi);
-                console.log(recipeInstructions);
             }
+            console.log(recipeInstructions);
             document.querySelector("body").append(recipeInstructions);
 
 

@@ -151,6 +151,7 @@ p, li{
 .wine-img {
   width: 40%;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .recipe-img {
   width: 75%;
@@ -169,6 +170,7 @@ a {
 
 .recipe-container h2 {
   color: var(--secondary-color);
+  padding: 30px;
 }
 
 h4,

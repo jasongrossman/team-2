@@ -146,10 +146,12 @@ p, li{
   box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
   border-radius: 10px;
   margin: auto;
-  width: 60%;
-  padding: 10px;
 }
 
+.wine-img {
+  width: 40%;
+  margin-bottom: 30px;
+}
 .recipe-img {
   width: 75%;
   margin-bottom: 30px;
@@ -166,10 +168,12 @@ a {
 }
 
 .recipe-container h2 {
-  color: #e76f51;
+  color: var(--secondary-color);
 }
 
 h4,
 ul {
   font-size: 25px;
+  line-height: 1.5;
 }
+

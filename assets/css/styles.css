@@ -1,12 +1,12 @@
-:root 
-{
-    --primary-color: #4E598C;
-    --secondary-color: #FF8C42;
-    /* --tertiary-color: #39a6b2; */
+:root {
+  --primary-color: #4e598c;
+  --secondary-color: #ff8c42;
+  /* --tertiary-color: #39a6b2; */
 }
 
 body {
   background-color: rgb(255, 255, 255);
+  font-family: "Hind", sans-serif;
 }
 
 nav {
@@ -23,80 +23,11 @@ nav {
   /* background-size: cover;
   background-position: center;
   background-attachment: fixed; */
-  
-}
-
-.mid-section {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
-  background-size: cover;
-  background-position: center;   
-  background-attachment: fixed;
-}
-
-#container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 15% auto;
-  width: 500px;
-  border-radius: 20px;
-  justify-content: center;
-  background-color: var(--secondary-color);
-}
-.header {
-  display: flex;
-  justify-content: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.header h1 {
-  padding: 0px 5px;
-  text-align: center;
-}
-
-.intro {
-  display: flex;
-  justify-content: center;
-  padding-top: auto;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.dropdown {
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  margin: 5px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  padding-bottom: 10px;
-}
-
-.button {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  border-color: #003049;
-  background-color: var(--primary-color);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: white;
-  box-shadow: 0 4px rgb(128, 121, 121);
-}
-
-.button:hover {
-  background-color: #3e8e41
-}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 3px #666;
-  transform: translateY(2px);
 }
 
 #icon-text {
   display: flex;
-  background-color:  rgba(255, 109, 0, 0.8);
+  background-color: rgba(255, 109, 0, 0.8);
   border-radius: 10px;
   height: 75%;
   align-items: center;
@@ -119,4 +50,135 @@ nav {
   flex-direction: column;
   align-items: center;
   padding: 7px 7px;
+}
+
+.mid-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 15% auto;
+  width: 500px;
+  border-radius: 20px;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
+}
+.header {
+  display: flex;
+  justify-content: center;
+  font-family: "Hind", sans-serif;
+}
+
+.header h1 {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  padding-top: auto;
+  font-family: "Hind", sans-serif;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin: 5px;
+  font-family: "Hind", sans-serif;
+  padding-bottom: 10px;
+}
+
+.button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-color: #003049;
+  background-color: var(--primary-color);
+  font-family: "Hind", sans-serif;
+  color: white;
+  box-shadow: 0 4px rgb(128, 121, 121);
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 4px rgb(128, 121, 121);
+  transform: translateY(2px);
+}
+
+h2,
+h4,
+p {
+  text-align: center;
+}
+
+.keyword-search {
+  align-items: center;
+  margin-left: 35%;
+  text-align: center;
+}
+
+h2 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 35px;
+  color: #3c096c;
+}
+
+p,
+li {
+  font-size: 20px;
+}
+
+/* Wine and Recipe Img */
+.wine-img,
+.recipe-img {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
+  border-radius: 10px;
+  margin: auto;
+}
+
+.wine-img {
+  width: 40%;
+  margin-bottom: 30px;
+}
+.recipe-img {
+  width: 75%;
+  margin-bottom: 30px;
+}
+
+/* Wine link */
+a {
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  padding: 25px;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-container h2 {
+  color: var(--secondary-color);
+}
+
+h4,
+ul {
+  font-size: 25px;
+  line-height: 1.5;
 }

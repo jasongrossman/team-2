@@ -7,7 +7,7 @@
 
 body {
   background-color: rgb(255, 255, 255);
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
 }
 
 nav {
@@ -28,7 +28,7 @@ nav {
 
 #icon-text {
   display: flex;
-  background-color:  rgba(255, 109, 0, 0.8);
+  background-color: rgba(255, 109, 0, 0.8);
   border-radius: 10px;
   height: 75%;
   align-items: center;
@@ -56,9 +56,9 @@ nav {
 .mid-section {
   display: flex;
   flex-wrap: wrap;
-  background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg');
+  background-image: url("../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg");
   background-size: cover;
-  background-position: center;   
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -76,15 +76,11 @@ nav {
 .header {
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  font-family: "Roboto";
-=======
-  font-family: 'Hind', sans-serif;
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7
+
 }
 
 .header h1 {
-  padding: 0px 5px;
+  padding: 10px 5px;
   text-align: center;
 }
 
@@ -92,7 +88,6 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: auto;
-<<<<<<< HEAD
   font-family: "Roboto";
 }
 
@@ -100,10 +95,8 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-=======
-  font-family: 'Hind', sans-serif;
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7
+  font-family: "Roboto";
+
 }
 
 .dropdown {
@@ -111,11 +104,6 @@ nav {
   justify-content: center;
   padding-top: 10px;
   margin: 5px;
-<<<<<<< HEAD
-  
-=======
-  font-family: 'Hind', sans-serif;
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7
   padding-bottom: 10px;
 }
 
@@ -125,27 +113,20 @@ nav {
   border-radius: 12px;
   cursor: pointer;
   background-color: var(--primary-color);
-<<<<<<< HEAD
   font-family: "Roboto";
-=======
-  font-family: 'Hind', sans-serif;
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7
+  font-family: "Hind", sans-serif;
   color: white;
   
 }
 
 .button:hover {
-  background-color: var(--tertiary-color)
+  background-color: var(--tertiary-color);
+  background-color: #3e8e41;
+
 }
 
 .button:active {
-<<<<<<< HEAD
   background-color: var(--secondary-color);
-  
-=======
-  background-color: #3e8e41;
-  box-shadow: 0 4px rgb(128, 121, 121);
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7
   transform: translateY(2px);
 }
 
@@ -155,13 +136,20 @@ p {
   text-align: center;
 }
 
+.keyword-search {
+  align-items: center;
+  margin-left: 35%;
+  text-align: center;
+}
+
 h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 35px;
   color: #3c096c;
 }
 
-p, li{
+p,
+li {
   font-size: 20px;
 }
 
@@ -186,12 +174,12 @@ p, li{
 
 /* Wine link */
 a {
-    display: flex;
-    font-size: 15px;
-    justify-content: center;
-    padding: 25px;
-    text-decoration: none;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  padding: 25px;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .recipe-container h2 {
@@ -204,7 +192,6 @@ ul {
   line-height: 1.5;
 }
 
-<<<<<<< HEAD
 #top-right-icons:hover {
   opacity: 80%;
   color: #F9C784;
@@ -216,5 +203,3 @@ ul {
   align-items: center;
   padding: 12px 12px;
 }
-=======
->>>>>>> e0ce95aa2f6ac4b6a0f451d9297b5d9f470fcba7

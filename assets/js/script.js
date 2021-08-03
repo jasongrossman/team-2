@@ -136,13 +136,13 @@ var spoonacularCall = function() {
 }
 //event handler for search by dish/keyword
 //event handler for cook button
-document.querySelector("#cook").addEventListener("click", function() {
+document.querySelector("#cuisine-search").addEventListener("click", function() {
     cuisineQuery = selectedCuisine.value;
     tastyCall();
     spoonacularCall();
 });
 
-document.querySelector("#keyword").addEventListener("click", function() {
+document.querySelector("#keyword-search").addEventListener("click", function() {
     cuisineQuery = selectedKeyword.value;
     tastyCall();
     spoonacularCall();

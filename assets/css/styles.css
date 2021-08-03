@@ -1,3 +1,10 @@
+:root 
+{
+    --primary-color: #4E598C;
+    --secondary-color: #FF8C42;
+    --tertiary-color: #39a6b2;
+}
+
 body {
   background-color: rgb(255, 255, 255);
 }
@@ -19,8 +26,6 @@ nav {
   background-size: cover;
   background-position: center;   
   background-attachment: fixed;
-  
-  
 }
 
 #container {

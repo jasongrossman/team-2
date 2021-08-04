@@ -11,6 +11,10 @@ body {
 }
 
 nav {
+  z-index: 9999;
+    position: -webkit-sticky;
+    position:sticky;
+    top: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -81,6 +85,7 @@ nav {
 .header h1 {
   padding: 10px 5px;
   text-align: center;
+  font-size: 25px;
 }
 
 .intro {
@@ -95,7 +100,6 @@ nav {
   justify-content: center;
   padding-top: auto;
   font-family: "Roboto";
-
 }
 
 .dropdown {
@@ -120,8 +124,7 @@ nav {
 
 .button:hover {
   background-color: var(--tertiary-color);
-  background-color: #3e8e41;
-
+  
 }
 
 .button:active {
@@ -137,8 +140,8 @@ p {
 
 .keyword-search {
   align-items: center;
-  margin-left: 35%;
-  text-align: center;
+  /* margin-left: 35%; */
+  /* text-align: center; */
 }
 
 h2 {
@@ -195,6 +198,7 @@ ul {
   opacity: 80%;
   color: #F9C784;
 }
+
 
 #top-right-icons i {
   display: flex;

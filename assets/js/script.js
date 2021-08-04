@@ -126,7 +126,7 @@ var spoonacularCall = function() {
                 recipeIngredientLi.appendChild(recipeIngredientMeasure);
                 recipeIngredients.appendChild(recipeIngredientLi);
             }
-            $("recipe.container").append(recipeIngredients);
+            $("recipe.container").append(recipeIngredients);ƒ
 
             //create list to add recipe instructions
             var recipeInstructions = document.createElement("ul");

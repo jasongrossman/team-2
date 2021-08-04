@@ -11,6 +11,10 @@ body {
 }
 
 nav {
+  z-index: 9999;
+    position: -webkit-sticky;
+    position:sticky;
+    top: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -81,6 +85,7 @@ nav {
 .header h1 {
   padding: 10px 5px;
   text-align: center;
+  font-size: 25px;
 }
 
 .intro {
@@ -95,7 +100,6 @@ nav {
   justify-content: center;
   padding-top: auto;
   font-family: "Roboto";
-
 }
 
 .dropdown {
@@ -113,15 +117,18 @@ nav {
   cursor: pointer;
   background-color: var(--primary-color);
   font-family: "Roboto";
-  font-family: "Hind", sans-serif;
   color: white;
   
 }
 
 .button:hover {
   background-color: var(--tertiary-color);
+<<<<<<< HEAD
   ;
 
+=======
+  
+>>>>>>> 4b3c4c29b9b9ed5a9d306fee6e3fe29fb9d85f9f
 }
 
 .button:active {
@@ -137,8 +144,8 @@ p {
 
 .keyword-search {
   align-items: center;
-  margin-left: 35%;
-  text-align: center;
+  /* margin-left: 35%; */
+  /* text-align: center; */
 }
 
 h2 {
@@ -165,6 +172,7 @@ li {
 .wine-img {
   width: 40%;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .recipe-img {
   width: 75%;
@@ -183,6 +191,7 @@ a {
 
 .recipe-container h2 {
   color: var(--secondary-color);
+  padding: 30px;
 }
 
 h4,
@@ -195,6 +204,7 @@ ul {
   opacity: 80%;
   color: #F9C784;
 }
+
 
 #top-right-icons i {
   display: flex;

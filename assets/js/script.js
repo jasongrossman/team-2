@@ -129,6 +129,7 @@ var spoonacularCall = function() {
         var wineLink = document.createElement("a");
         wineLink.setAttribute("class", "#wine");
         wineLink.setAttribute("href", data.productMatches[0].link);
+        wineLink.setAttribute("target","_blank")
         wineLink.innerHTML = "ORDER YOUR WINE HERE";
         winePairing.appendChild(wineLink);
         document.querySelector("body").append(winePairing);

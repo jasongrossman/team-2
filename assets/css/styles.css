@@ -12,22 +12,17 @@ body {
 
 nav {
   z-index: 9999;
-    position: -webkit-sticky;
-    position:sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position:sticky;
+  top: 0;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   background-color: var(--primary-color);
   height: 80px;
-  justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-  align-items: center;
-  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
-  /* background-size: cover;
-  background-position: center;
-  background-attachment: fixed; */
+  align-content: center;
+  
 }
 
 #icon-text {
@@ -123,7 +118,6 @@ nav {
 
 .button:hover {
   background-color: var(--tertiary-color);
-  
 }
 
 .button:active {

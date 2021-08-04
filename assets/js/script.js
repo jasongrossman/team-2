@@ -126,7 +126,7 @@ var spoonacularCall = function() {
                 recipeIngredientLi.appendChild(recipeIngredientMeasure);
                 recipeIngredients.appendChild(recipeIngredientLi);
             }
-            document.querySelector("recipe-container").append(recipeIngredients);
+            $(".recipe-container").append(recipeIngredients);
 
             //create list to add recipe instructions
             var recipeInstructions = document.createElement("ul");
@@ -203,7 +203,7 @@ document.querySelector("#cuisine-search").addEventListener("click", function() {
 });
 
 //Event handler for search by dish/keyword
-document.querySelector("#keyword-search").addEventListener("click", function() {
+    document.querySelector("#keyword-search").addEventListener("click", function() {
     cuisineQuery = selectedKeyword.value;
     tastyCall();
     spoonacularCall();

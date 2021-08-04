@@ -1,0 +1,228 @@
+:root {
+  --primary-color: #4e598c;
+  --secondary-color: #ff8c42;
+  --tertiary-color: #fcaf58;
+}
+
+body {
+  background-color: #4e598c;
+  font-family: "Roboto";
+}
+
+nav {
+  z-index: 9999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  height: 80px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
+  /* background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+}
+
+#icon-text {
+  display: flex;
+  background-color: rgba(255, 109, 0, 0.8);
+  border-radius: 10px;
+  height: 75%;
+  align-items: center;
+}
+
+#icon-text h2 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#top-right-icons {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+}
+
+#top-right-icons i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 7px;
+}
+
+.mid-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 90vh;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 15% auto;
+  width: 500px;
+  border-radius: 20px;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header h1 {
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  padding-top: auto;
+  font-family: "Roboto";
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: auto;
+  font-family: "Roboto";
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin: 5px;
+  padding-bottom: 10px;
+}
+
+.button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  font-family: "Roboto";
+  color: white;
+}
+
+.button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.button:active {
+  background-color: var(--secondary-color);
+  transform: translateY(2px);
+}
+
+h2,
+h4,
+p {
+  text-align: center;
+}
+
+.keyword-search {
+  align-items: center;
+  /* margin-left: 35%; */
+  text-align: center;
+}
+
+h2 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 35px;
+  color: var(--primary-color);
+}
+
+p,
+li {
+  font-size: 20px;
+}
+
+/* Wine and Recipe Img */
+.wine-img,
+.recipe-img {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
+  border-radius: 10px;
+  margin: auto;
+}
+
+.wine-img {
+  width: 40%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.recipe-img {
+  width: 60%;
+  margin-bottom: 30px;
+}
+
+/* Wine link */
+a {
+  display: flex;
+  color: var(--primary-color);
+  font-size: 25px;
+  justify-content: center;
+  padding: 25px;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.recipe-container h2 {
+  color: var(--secondary-color);
+  padding: 30px;
+}
+
+h4,
+ul {
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+#top-right-icons:hover {
+  opacity: 80%;
+  color: #f9c784;
+  cursor: pointer;
+}
+
+#top-right-icons i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 12px;
+}
+.box {
+  width: 80%;
+  margin-left: 10%;
+  background-color: rgba(255, 109, 0, 0.8);
+  margin-top: 5%;
+  padding: 20px 30px 40px 30px;
+  margin-bottom: 5%;
+  color: white;
+}
+.box h2 {
+  color: white;
+}
+.wine {
+  color: white;
+}
+ul .recipe-instructions {
+  text-decoration: underline;
+}

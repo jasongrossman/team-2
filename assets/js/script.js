@@ -129,19 +129,22 @@ var spoonacularCall = function() {
         var wineLink = document.createElement("a");
         wineLink.setAttribute("class", "#wine");
         wineLink.setAttribute("href", data.productMatches[0].link);
+        wineLink.setAttribute("target", "_blank");
+        wineLink.setAttribute("rel", "noopener");
         wineLink.innerHTML = "ORDER YOUR WINE HERE";
         winePairing.appendChild(wineLink);
         document.querySelector("body").append(winePairing);
     })
 }
-//event handler for search by dish/keyword
-//event handler for cook button
+
+//Event handler for cook button
 document.querySelector("#cuisine-search").addEventListener("click", function() {
     cuisineQuery = selectedCuisine.value;
     tastyCall();
     spoonacularCall();
 });
 
+//Event handler for search by dish/keyword
 document.querySelector("#keyword-search").addEventListener("click", function() {
     cuisineQuery = selectedKeyword.value;
     tastyCall();

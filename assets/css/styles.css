@@ -117,7 +117,6 @@ nav {
   cursor: pointer;
   background-color: var(--primary-color);
   font-family: "Roboto";
-  font-family: "Hind", sans-serif;
   color: white;
   
 }
@@ -168,6 +167,7 @@ li {
 .wine-img {
   width: 40%;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .recipe-img {
   width: 75%;
@@ -186,6 +186,7 @@ a {
 
 .recipe-container h2 {
   color: var(--secondary-color);
+  padding: 30px;
 }
 
 h4,

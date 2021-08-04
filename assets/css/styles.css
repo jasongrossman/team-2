@@ -64,6 +64,7 @@ nav {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 90vh;
 }
 
 #container {
@@ -145,7 +146,7 @@ p {
 h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 35px;
-  color: #3c096c;
+  color: var(--primary-color);
 }
 
 p,
@@ -169,18 +170,19 @@ li {
   margin-top: 30px;
 }
 .recipe-img {
-  width: 75%;
+  width: 60%;
   margin-bottom: 30px;
 }
 
 /* Wine link */
 a {
   display: flex;
-  font-size: 15px;
+  color: var(--primary-color);
+  font-size: 25px;
   justify-content: center;
   padding: 25px;
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .recipe-container h2 {
@@ -197,6 +199,7 @@ ul {
 #top-right-icons:hover {
   opacity: 80%;
   color: #F9C784;
+  cursor: pointer;
 }
 
 

@@ -6,7 +6,7 @@
 
 body {
   background-color: #4e598c;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
@@ -15,45 +15,44 @@ nav {
   position: sticky;
   top: 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   background-color: var(--primary-color);
-  height: 80px;
+  height: 10vh;
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
-  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
-  /* background-size: cover;
-  background-position: center;
-  background-attachment: fixed; */
 }
 
-#icon-text {
+nav ul {
   display: flex;
-  background-color: rgba(255, 109, 0, 0.8);
-  border-radius: 10px;
-  height: 75%;
-  align-items: center;
 }
 
-#icon-text h2 {
-  padding-left: 5px;
-  padding-right: 5px;
+.fa-heart {
+  font-size: 35px;
 }
 
-#top-right-icons {
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: center;
+/* Social Media Icons */
+.social i {
+  font-size: 40px;
+  padding: 10px;
+  justify-content: space-around;
 }
 
-#top-right-icons i {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 7px 7px;
+.social i:hover,
+.social i:focus {
+  color: var(--primary-color);
+}
+
+.social .fa-facebook-square {
+  color: #1877f2;
+}
+
+.social .fa-twitter-square {
+  color: #1da1f2;
+}
+
+.social .fa-instagram-square {
+  color: var(--secondary-color);
 }
 
 .mid-section {
@@ -69,10 +68,10 @@ nav {
 #container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: 15% auto;
+  margin: 18% auto;
   width: 500px;
-  border-radius: 20px;
+  height: 25vh;
+  border-radius: 30px;
   justify-content: center;
   background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
@@ -93,14 +92,14 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 .search {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 .dropdown {
@@ -117,11 +116,12 @@ nav {
   border-radius: 12px;
   cursor: pointer;
   background-color: var(--primary-color);
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--tertiary-color);
 }
 
@@ -138,13 +138,12 @@ p {
 
 .keyword-search {
   align-items: center;
-  /* margin-left: 35%; */
   text-align: center;
 }
 
 h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-size: 35px;
+  font-size: 40px;
   color: var(--primary-color);
 }
 
@@ -158,20 +157,21 @@ li {
 .recipe-img {
   display: flex;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
-  border-radius: 10px;
   margin: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
 }
 
 .wine-img {
   width: 40%;
   margin-bottom: 30px;
   margin-top: 30px;
+  border-radius: 5px;
 }
 
 .recipe-img {
   width: 60%;
   margin-bottom: 30px;
+  border-radius: 10px;
 }
 
 /* Wine link */
@@ -182,7 +182,7 @@ a {
   justify-content: center;
   padding: 25px;
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .recipe-container h2 {
@@ -196,18 +196,6 @@ ul {
   line-height: 1.5;
 }
 
-#top-right-icons:hover {
-  opacity: 80%;
-  color: #f9c784;
-  cursor: pointer;
-}
-
-#top-right-icons i {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 12px;
-}
 .box {
   width: 80%;
   margin-left: 10%;
@@ -217,12 +205,91 @@ ul {
   margin-bottom: 5%;
   color: white;
 }
+
 .box h2 {
   color: white;
 }
+
 .wine {
   color: white;
 }
-ul .recipe-instructions {
-  text-decoration: underline;
+
+.recipe-ingredients,
+.recipe-instructions {
+  margin-top: 15px;
 }
+
+.recipe-ingredients li {
+  list-style: circle;
+}
+
+.recipe-instructions li {
+  list-style: decimal;
+}
+
+.wine-details {
+  margin-top: 15px;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+
+  h2,
+  .fa-heart,
+  .social i {
+    font-size: 30px;
+  }
+
+  /* MEDIA QUERY FOR TABLETS AND SMALLER */
+  @media screen and (max-width: 768px) {
+
+    h2,
+    .fa-heart,
+    .social i {
+      font-size: 25px;
+    }
+
+    #container {
+      width: 400px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+    }
+
+    p,
+    li {
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .recipe-img {
+      width: 50%;
+    }
+
+    .wine-img {
+      width: 30%;
+    }
+
+    a {
+      font-size: 15px;
+    }
+  }
+
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+  @media screen and (max-width: 575px) {
+
+    #container {
+      width: 350px;
+    }
+
+    .button {
+      border-radius: 45px;
+    }
+
+    h2,
+    h4,
+    ul {
+      font-size: 20px;
+    }
+  }

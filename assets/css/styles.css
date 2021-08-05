@@ -40,19 +40,19 @@ nav ul {
 
 .social i:hover,
 .social i:focus {
-  color: var(--primary-color);
+  color: var(--tertiary-color);
 }
 
 .social .fa-facebook-square {
-  color: #1877f2;
+  color:white;
 }
 
 .social .fa-twitter-square {
-  color: #1da1f2;
+  color: white;
 }
 
 .social .fa-instagram-square {
-  color: var(--secondary-color);
+  color: white;
 }
 
 .mid-section {
@@ -149,7 +149,7 @@ h2 {
 
 p,
 li {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* Wine and Recipe Img */
@@ -231,6 +231,22 @@ ul {
   margin-top: 15px;
 }
 
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+margin: 0rem;
+text-align: left;
+height: 40px;
+background-color: var(--primary-color);
+color: white;
+} 
+
+.footer,
+.content {
+text-align: left;
+}
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
 
@@ -292,4 +308,4 @@ ul {
     ul {
       font-size: 20px;
     }
-  }
+  }}

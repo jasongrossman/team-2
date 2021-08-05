@@ -1,19 +1,18 @@
-:root 
-{
-    --primary-color: #4E598C;
-    --secondary-color: #FF8C42;
-    --tertiary-color: #FCAF58; 
+:root {
+  --primary-color: #4e598c;
+  --secondary-color: #ff8c42;
+  --tertiary-color: #fcaf58;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: #4e598c;
   font-family: "Roboto";
 }
 
 nav {
   z-index: 9999;
   position: -webkit-sticky;
-  position:sticky;
+  position: sticky;
   top: 0;
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +72,7 @@ nav {
   background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
 }
+
 .header {
   display: flex;
   justify-content: center;
@@ -114,7 +114,6 @@ nav {
   background-color: var(--primary-color);
   font-family: "Roboto";
   color: white;
-  
 }
 
 .button:hover {
@@ -135,7 +134,7 @@ p {
 .keyword-search {
   align-items: center;
   /* margin-left: 35%; */
-  /* text-align: center; */
+  text-align: center;
 }
 
 h2 {
@@ -164,6 +163,7 @@ li {
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
 .recipe-img {
   width: 60%;
   margin-bottom: 30px;
@@ -193,10 +193,9 @@ ul {
 
 #top-right-icons:hover {
   opacity: 80%;
-  color: #F9C784;
+  color: #f9c784;
   cursor: pointer;
 }
-
 
 #top-right-icons i {
   display: flex;
@@ -204,4 +203,22 @@ ul {
   align-items: center;
   padding: 12px 12px;
   color: white;
+}
+.box {
+  width: 80%;
+  margin-left: 10%;
+  background-color: rgba(255, 109, 0, 0.8);
+  margin-top: 5%;
+  padding: 20px 30px 40px 30px;
+  margin-bottom: 5%;
+  color: white;
+}
+.box h2 {
+  color: white;
+}
+.wine {
+  color: white;
+}
+ul .recipe-instructions {
+  text-decoration: underline;
 }

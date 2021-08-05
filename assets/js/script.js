@@ -36,12 +36,9 @@ var tastyCall = function () {
             .json()
 
             .then(function (data) {
-                console.log(data);
 
                 //create randomizer to select a random recipe from returned search results
                 var randomizer = Math.floor(Math.random() * data.results.length);
-                console.log(randomizer);
-                console.log(data.results.length);
 
                 //create container to hold recipe information
                 var recipeContainer = document.createElement("div");
@@ -62,7 +59,7 @@ var tastyCall = function () {
                 var cookingTime = document.createElement("h4");
                 cookingTime.setAttribute("class", "cooking-time");
                 if (data.results[randomizer].cook_time_minutes == null) {
-                    console.log("There are no cooking time details");
+                    // console.log("There are no cooking time details");
                 } else {
                     cookingTime.textContent =
                         "Cooking time: " +
@@ -119,7 +116,6 @@ var tastyCall = function () {
                         data.results[randomizer].instructions[i].display_text;
                     recipeInstructions.appendChild(recipeInstructionLi);
                 }
-                console.log(recipeInstructions);
                 document.querySelector(".recipe-container").append(recipeInstructions);
             });
     });
@@ -140,7 +136,7 @@ var spoonacularCall = function () {
         })
 
         .then(function (data) {
-            console.log(data);
+
             //create container to hold wine pairing response:
             var winePairing = document.createElement("div");
             winePairing.setAttribute("class", "wine-pairing box");
@@ -153,6 +149,7 @@ var spoonacularCall = function () {
             winePairing.appendChild(wineDescription);
             // Details of wine pairing
             var wineDetails = document.createElement("p");
+            wineDetails.setAttribute("class", "wine-details");
             wineDetails.textContent = data.productMatches[0].description;
             winePairing.appendChild(wineDetails);
             // Wine logo
@@ -175,8 +172,7 @@ var spoonacularCall = function () {
         });
 };
 
-//Event handler for cook button
-
+//Event handler for search by cuisine
 document.querySelector("#cuisine-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedCuisine.value;
@@ -184,7 +180,7 @@ document.querySelector("#cuisine-search")
         spoonacularCall();
     });
 
-//Event handler for search by dish/keyword
+//Event handler for search by keyword
 document.querySelector("#keyword-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedKeyword.value;

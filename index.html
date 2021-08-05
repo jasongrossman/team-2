@@ -23,51 +23,65 @@
 
 <body>
     <nav>
-        <div id="site-icon">
-            <h2 style="color:white"><i style="font-size: 30px" class="far fa-heart"></i> FoodieLove</h2>
-        </div>
-
+        <h2 style="color:white"><i class="far fa-heart"></i> FoodieLove</h2>
+        <ul class="social">
+            <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <section class="mid-section">
         <div id="container" hidden="true">
             <header class="header">
-                <h1>What are you feeling like today?</h1>
+                <h1><i>What are you feeling like today?</i></h1>
             </header>
             <div class="search">
                 <form class="keyword">
-                    <label class="search-header"></label>
+                    <!-- <label class="search-header"></label> -->
                     <input class="keyword-search" type="text" autofocus="true" id="keyword-input"
                         placeholder="Search By Keyword">
                 </form>
             </div>
-            <div class="dropdown" hidden="true">
-                <select class="cuisine" id="cuisine">
-                    <option value="" disabled selected>Choose a Cuisine</option>
-                    <option value="African">African</option>
-                    <option value="American">American (Recipes only)</option>
-                    <option value="British">British (Recipes only)</option>
-                    <option value="Cajun">Cajun</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Greek">Greek</option>
-                    <option value="French">French</option>
-                    <option value="German">German</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Indian">Indian</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Korean">Korean</option>
-                    <option value="Latin-American">Latin American (Recipes only)</option>
-                    <option value="Mediterranean">Mediterranean (Recipes only)</option>
-                    <option value="Mexican">Mexican</option>
-                    <option value="Middle-Eastern">Middle Eastern (Recipes only)</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Thai">Thai</option>
-                    <option value="Vietnamese">Vietnamese</option>
-                </select>
-            </div>
-            <div class="intro">
-                <button class="button" id="keyword-search">Search by Keyword</button>
-                <button class="button" id="cuisine-search">Search by Cuisine</button>
-            </div>
+                <div class="dropdown" hidden="true">
+                    <select class="cuisine" id="cuisine">
+                        <option value="" disabled selected>Choose a Cuisine</option>
+                        <option value="African">African</option>
+                        <option value="American">American (Recipes only)</option>
+                        <option value="British">British (Recipes only)</option>
+                        <option value="Cajun">Cajun</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Greek">Greek</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Latin-American">Latin American (Recipes only)</option>
+                        <option value="Mediterranean">Mediterranean (Recipes only)</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Middle-Eastern">Middle Eastern (Recipes only)</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                    </select>
+                </div>   
+                <div class="intro">
+                    <button class="button" id="keyword-search">Search by Keyword</button>
+                    <button class="button" id="cuisine-search">Search by Cuisine</button>
+                </div>            
         </div>
     </section>
     <!-- Link to JQuery -->

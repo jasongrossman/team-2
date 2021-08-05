@@ -231,22 +231,32 @@ ul {
   margin-top: 15px;
 }
 
-.footer {
+#footer {
 position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
 margin: 0rem;
 text-align: left;
-height: 40px;
+height: 60px;
 background-color: var(--primary-color);
 color: white;
 } 
 
-.footer,
+#footer,
 .content {
 text-align: left;
 }
+
+.license {
+  float: left;
+  text-size-adjust: 14px;
+}
+
+.contact {
+  float: left;
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
 

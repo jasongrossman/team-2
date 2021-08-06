@@ -11,6 +11,7 @@ body {
 
 nav {
   z-index: 9999;
+  /* -webkit-sticky for Safari Browser */
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -68,9 +69,10 @@ nav ul {
 #container {
   display: flex;
   flex-direction: column;
-  margin: 18% auto;
+  position: static;
+  margin: auto;
   width: 500px;
-  height: 25vh;
+  /* height: 35vh; */
   border-radius: 30px;
   justify-content: center;
   background-color: var(--secondary-color);
@@ -102,13 +104,20 @@ nav ul {
   font-family: "Roboto", sans-serif;
 }
 
-.dropdown {
+.dropdown.select.is-small.is-rounded{
   display: flex;
   justify-content: center;
-  padding-top: 10px;
-  margin: 5px;
-  padding-bottom: 10px;
+  margin-top: 5px;
+  align-items: center;
+  margin: auto;
+  height: 45px;
+  width: 150px;
+  
 }
+
+/* #cuisine {
+  margin: auto;
+} */
 
 .button {
   padding: 10px;
@@ -185,9 +194,11 @@ a {
   text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
+
+
 .recipe-container h2 {
   color: var(--secondary-color);
-  padding: 30px;
+  padding: 30px; 
 }
 
 h4,
@@ -202,7 +213,6 @@ ul {
   background-color: rgba(255, 109, 0, 0.8);
   margin-top: 5%;
   padding: 20px 30px 40px 30px;
-  margin-bottom: 5%;
   color: white;
 }
 
@@ -265,7 +275,7 @@ text-align: left;
   .social i {
     font-size: 30px;
   }
-
+}
   /* MEDIA QUERY FOR TABLETS AND SMALLER */
   @media screen and (max-width: 768px) {
 
@@ -318,4 +328,4 @@ text-align: left;
     ul {
       font-size: 20px;
     }
-  }}
+  }

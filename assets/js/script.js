@@ -13,7 +13,6 @@ var tastyCall = function () {
     $(".recipe-container").remove();
     $(".wine-pairing").html("");
     $(".wine-pairing").remove();
-
     // Make a fetch request to Tasty API for recipes based on user input
     fetch(
         "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes" +
@@ -31,12 +30,9 @@ var tastyCall = function () {
                 "x-rapidapi-host": "tasty.p.rapidapi.com",
             },
         }
-    ).then(function (response) {
-        return response
-            .json()
-
-            .then(function (data) {
-
+    ).then(function(response) {
+      if (response.ok){
+        response.json().then(function(data) {
                 //create randomizer to select a random recipe from returned search results
                 var randomizer = Math.floor(Math.random() * data.results.length);
 
@@ -118,25 +114,31 @@ var tastyCall = function () {
                 }
                 document.querySelector(".recipe-container").append(recipeInstructions);
             });
-    });
+            } 
+          else {
+              alert("There was an error!")
+            }
+    })
+    .catch(function(error){
+        alert("Unable to connect to FoodieLove");
+    })    
 };
 
 // Spoonacular API Call Function
 var spoonacularCall = function () {
-    // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
+      // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
     fetch(
             "https://api.spoonacular.com/food/wine/pairing" +
             "?food=" +
             cuisineQuery +
             "&apiKey=" +
             apiKey
-        )
+         )
         .then(function (response) {
             return response.json();
         })
-
+        
         .then(function (data) {
-
             //create container to hold wine pairing response:
             var winePairing = document.createElement("div");
             winePairing.setAttribute("class", "wine-pairing box");
@@ -176,6 +178,10 @@ var spoonacularCall = function () {
 document.querySelector("#cuisine-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedCuisine.value;
+        if (cuisineQuery === ""){
+          alert("Please choose a cuisine.");
+          return ;
+        };
         tastyCall();
         spoonacularCall();
     });
@@ -184,6 +190,10 @@ document.querySelector("#cuisine-search")
 document.querySelector("#keyword-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedKeyword.value;
+        if (cuisineQuery === ""){
+          alert("Please choose a cuisine.");
+          return ;
+        };
         tastyCall();
         spoonacularCall();
     });

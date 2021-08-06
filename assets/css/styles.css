@@ -11,6 +11,7 @@ body {
 
 nav {
   z-index: 9999;
+  /* -webkit-sticky for Safari Browser */
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -68,9 +69,10 @@ nav ul {
 #container {
   display: flex;
   flex-direction: column;
-  margin: 18% auto;
+  position: static;
+  margin: auto;
   width: 500px;
-  height: 35vh;
+  /* height: 35vh; */
   border-radius: 30px;
   justify-content: center;
   background-color: var(--secondary-color);
@@ -102,13 +104,20 @@ nav ul {
   font-family: "Roboto", sans-serif;
 }
 
-.dropdown {
+.dropdown.select.is-small.is-rounded{
   display: flex;
   justify-content: center;
-  padding-top: 10px;
-  margin: 5px;
-  padding-bottom: 10px;
+  margin-top: 5px;
+  align-items: center;
+  margin: auto;
+  height: 45px;
+  width: 150px;
+  
 }
+
+/* #cuisine {
+  margin: auto;
+} */
 
 .button {
   padding: 10px;

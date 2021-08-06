@@ -33,8 +33,10 @@ var tastyCall = function () {
     ).then(function(response) {
       if (response.ok){
         response.json().then(function(data) {
+            console.log(data);
                 //create randomizer to select a random recipe from returned search results
                 var randomizer = Math.floor(Math.random() * data.results.length);
+                console.log(randomizer);
 
                 //create container to hold recipe information
                 var recipeContainer = document.createElement("div");
@@ -113,6 +115,14 @@ var tastyCall = function () {
                     recipeInstructions.appendChild(recipeInstructionLi);
                 }
                 document.querySelector(".recipe-container").append(recipeInstructions);
+
+                //save results to local storage
+                var savedCuisine = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].name));
+                var searchSavedCuisine = document.createElement("button");
+                searchSavedCuisine.setAttribute("class", "button");
+                searchSavedCuisine.textContent = JSON.parse(localStorage.getItem("dish"));
+                $("#container").append(searchSavedCuisine);
+                console.log(savedCuisine);
             });
             } 
           else {
@@ -139,6 +149,7 @@ var spoonacularCall = function () {
         })
         
         .then(function (data) {
+            console.log(data);
             //create container to hold wine pairing response:
             var winePairing = document.createElement("div");
             winePairing.setAttribute("class", "wine-pairing box");

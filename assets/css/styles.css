@@ -70,7 +70,7 @@ nav ul {
   flex-direction: column;
   margin: 18% auto;
   width: 500px;
-  height: 25vh;
+  height: 35vh;
   border-radius: 30px;
   justify-content: center;
   background-color: var(--secondary-color);
@@ -185,9 +185,11 @@ a {
   text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
+
+
 .recipe-container h2 {
   color: var(--secondary-color);
-  padding: 30px;
+  padding: 30px; 
 }
 
 h4,
@@ -202,7 +204,6 @@ ul {
   background-color: rgba(255, 109, 0, 0.8);
   margin-top: 5%;
   padding: 20px 30px 40px 30px;
-  margin-bottom: 5%;
   color: white;
 }
 

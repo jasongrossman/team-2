@@ -36,7 +36,6 @@ var tastyCall = function () {
             .json()
 
             .then(function (data) {
-
                 //create randomizer to select a random recipe from returned search results
                 var randomizer = Math.floor(Math.random() * data.results.length);
 

@@ -15,129 +15,128 @@ var tastyCall = function () {
     $(".wine-pairing").remove();
     // Make a fetch request to Tasty API for recipes based on user input
     fetch(
-        "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes" +
-        "&q=" +
-        cuisineQuery, {
-            method: "GET",
-            params: {
-                from: "0",
-                size: "20",
-                tags: "under_30_minutes",
-                q: cuisineQuery,
-            },
-            headers: {
-                "x-rapidapi-key": "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5",
-                "x-rapidapi-host": "tasty.p.rapidapi.com",
-            },
-        }
-    ).then(function(response) {
-      if (response.ok){
-        response.json().then(function(data) {
-                //create randomizer to select a random recipe from returned search results
-                var randomizer = Math.floor(Math.random() * data.results.length);
-
-                //create container to hold recipe information
-                var recipeContainer = document.createElement("div");
-                recipeContainer.setAttribute("class", "recipe-container box");
-                var recipeName = document.createElement("h2");
-                recipeName.textContent =
-                    "TRY THIS RECIPE: " + data.results[randomizer].name.toUpperCase();
-                recipeContainer.appendChild(recipeName);
-                document.querySelector("body").append(recipeContainer);
-
-                // Image of recipe
-                var recipeImg = document.createElement("img");
-                recipeImg.setAttribute("class", "recipe-img");
-                recipeImg.setAttribute("src", data.results[randomizer].thumbnail_url);
-                recipeContainer.appendChild(recipeImg);
-
-                //retrieve cooking time, servings and ingredient list
-                var cookingTime = document.createElement("h4");
-                cookingTime.setAttribute("class", "cooking-time");
-                if (data.results[randomizer].cook_time_minutes == null) {
-                    // console.log("There are no cooking time details");
-                } else {
-                    cookingTime.textContent =
-                        "Cooking time: " +
-                        data.results[randomizer].cook_time_minutes +
-                        " minutes";
-                    recipeContainer.appendChild(cookingTime);
-                }
-                var servings = document.createElement("h4");
-                servings.textContent =
-                    "Servings: " + data.results[randomizer].num_servings;
-                cookingTime.appendChild(servings);
-
-                var recipeIngredients = document.createElement("ul");
-                recipeIngredients.setAttribute("class", "recipe-ingredients");
-                recipeIngredients.textContent = "Ingredients:";
-
-                for (
-                    i = 0; i < data.results[randomizer].sections[0].components.length; i++
-                ) {
-                    var recipeIngredientLi = document.createElement("li");
-                    recipeIngredientLi.setAttribute("class", "recipe-ingredient-li");
-                    recipeIngredientLi.textContent =
-                        data.results[randomizer].sections[0].components[i].ingredient.name +
-                        ": ";
-                    var recipeIngredientMeasure = document.createElement("span");
-                    //if ingredient measurement = 0, then display "to taste" instead of 0 quantity.
-                    if (
-                        data.results[randomizer].sections[0].components[i].measurements[0]
-                        .quantity > 0
-                    ) {
-                        recipeIngredientMeasure.textContent =
-                            data.results[randomizer].sections[0].components[i].measurements[0]
-                            .quantity +
-                            " " +
-                            data.results[randomizer].sections[0].components[i].measurements[0]
-                            .unit.abbreviation;
-                    } else {
-                        recipeIngredientMeasure.textContent = "";
-                    }
-                    recipeIngredientLi.appendChild(recipeIngredientMeasure);
-                    recipeIngredients.appendChild(recipeIngredientLi);
-                }
-                document.querySelector(".recipe-container").append(recipeIngredients);
-
-                //create list to add recipe instructions
-                var recipeInstructions = document.createElement("ul");
-                recipeInstructions.setAttribute("class", "recipe-instructions");
-                recipeInstructions.textContent = "Instructions:";
-
-                for (i = 0; i < data.results[randomizer].instructions.length; i++) {
-                    var recipeInstructionLi = document.createElement("li");
-                    recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
-                    recipeInstructionLi.textContent =
-                        data.results[randomizer].instructions[i].display_text;
-                    recipeInstructions.appendChild(recipeInstructionLi);
-                }
-                document.querySelector(".recipe-container").append(recipeInstructions);
-            });
-            } 
-          else {
-              alert("There was an error!")
+            "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes" +
+            "&q=" +
+            cuisineQuery, {
+                method: "GET",
+                params: {
+                    from: "0",
+                    size: "20",
+                    tags: "under_30_minutes",
+                    q: cuisineQuery,
+                },
+                headers: {
+                    "x-rapidapi-key": "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5",
+                    "x-rapidapi-host": "tasty.p.rapidapi.com",
+                },
             }
-    })
-    .catch(function(error){
-        alert("Unable to connect to FoodieLove");
-    })    
+        ).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    //create randomizer to select a random recipe from returned search results
+                    var randomizer = Math.floor(Math.random() * data.results.length);
+
+                    //create container to hold recipe information
+                    var recipeContainer = document.createElement("div");
+                    recipeContainer.setAttribute("class", "recipe-container box");
+                    var recipeName = document.createElement("h2");
+                    recipeName.textContent =
+                        "TRY THIS RECIPE: " + data.results[randomizer].name.toUpperCase();
+                    recipeContainer.appendChild(recipeName);
+                    document.querySelector("body").append(recipeContainer);
+
+                    // Image of recipe
+                    var recipeImg = document.createElement("img");
+                    recipeImg.setAttribute("class", "recipe-img");
+                    recipeImg.setAttribute("src", data.results[randomizer].thumbnail_url);
+                    recipeContainer.appendChild(recipeImg);
+
+                    //retrieve cooking time, servings and ingredient list
+                    var cookingTime = document.createElement("h4");
+                    cookingTime.setAttribute("class", "cooking-time");
+                    if (data.results[randomizer].cook_time_minutes == null) {
+                        // console.log("There are no cooking time details");
+                    } else {
+                        cookingTime.textContent =
+                            "Cooking time: " +
+                            data.results[randomizer].cook_time_minutes +
+                            " minutes";
+                        recipeContainer.appendChild(cookingTime);
+                    }
+                    var servings = document.createElement("h4");
+                    servings.textContent =
+                        "Servings: " + data.results[randomizer].num_servings;
+                    cookingTime.appendChild(servings);
+
+                    var recipeIngredients = document.createElement("ul");
+                    recipeIngredients.setAttribute("class", "recipe-ingredients");
+                    recipeIngredients.textContent = "Ingredients:";
+
+                    for (
+                        i = 0; i < data.results[randomizer].sections[0].components.length; i++
+                    ) {
+                        var recipeIngredientLi = document.createElement("li");
+                        recipeIngredientLi.setAttribute("class", "recipe-ingredient-li");
+                        recipeIngredientLi.textContent =
+                            data.results[randomizer].sections[0].components[i].ingredient.name +
+                            ": ";
+                        var recipeIngredientMeasure = document.createElement("span");
+                        //if ingredient measurement = 0, then display "to taste" instead of 0 quantity.
+                        if (
+                            data.results[randomizer].sections[0].components[i].measurements[0]
+                            .quantity > 0
+                        ) {
+                            recipeIngredientMeasure.textContent =
+                                data.results[randomizer].sections[0].components[i].measurements[0]
+                                .quantity +
+                                " " +
+                                data.results[randomizer].sections[0].components[i].measurements[0]
+                                .unit.abbreviation;
+                        } else {
+                            recipeIngredientMeasure.textContent = "";
+                        }
+                        recipeIngredientLi.appendChild(recipeIngredientMeasure);
+                        recipeIngredients.appendChild(recipeIngredientLi);
+                    }
+                    document.querySelector(".recipe-container").append(recipeIngredients);
+
+                    //create list to add recipe instructions
+                    var recipeInstructions = document.createElement("ul");
+                    recipeInstructions.setAttribute("class", "recipe-instructions");
+                    recipeInstructions.textContent = "Instructions:";
+
+                    for (i = 0; i < data.results[randomizer].instructions.length; i++) {
+                        var recipeInstructionLi = document.createElement("li");
+                        recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
+                        recipeInstructionLi.textContent =
+                            data.results[randomizer].instructions[i].display_text;
+                        recipeInstructions.appendChild(recipeInstructionLi);
+                    }
+                    document.querySelector(".recipe-container").append(recipeInstructions);
+                });
+            } else {
+                alert("There was an error!")
+            }
+        })
+        .catch(function (error) {
+            alert("Unable to connect to FoodieLove");
+        })
 };
 
 // Spoonacular API Call Function
 var spoonacularCall = function () {
-      // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
+    // Make a fetch request to Spoonacular for wine pairing based on user cuisine query
     fetch(
             "https://api.spoonacular.com/food/wine/pairing" +
             "?food=" +
             cuisineQuery +
             "&apiKey=" +
             apiKey
-         )
+        )
         .then(function (response) {
             return response.json();
         })
-        
+
         .then(function (data) {
             //create container to hold wine pairing response:
             var winePairing = document.createElement("div");
@@ -178,9 +177,9 @@ var spoonacularCall = function () {
 document.querySelector("#cuisine-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedCuisine.value;
-        if (cuisineQuery === ""){
-          alert("Please choose a cuisine.");
-          return ;
+        if (cuisineQuery === "") {
+            alert("Please choose a cuisine.");
+            return;
         };
         tastyCall();
         spoonacularCall();
@@ -190,9 +189,9 @@ document.querySelector("#cuisine-search")
 document.querySelector("#keyword-search")
     .addEventListener("click", function () {
         cuisineQuery = selectedKeyword.value;
-        if (cuisineQuery === ""){
-          alert("Please choose a cuisine.");
-          return ;
+        if (cuisineQuery === "") {
+            alert("Please choose a cuisine.");
+            return;
         };
         tastyCall();
         spoonacularCall();

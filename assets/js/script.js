@@ -149,7 +149,7 @@ var tastyCall = function () {
           document
             .querySelector(".recipe-container")
             .append(recipeInstructions);
-
+          spoonacularCall();
           //save results to local storage
           var saveDish = localStorage.setItem(
             "dish",
@@ -228,7 +228,7 @@ document
       return;
     }
     tastyCall();
-    spoonacularCall();
+    //spoonacularCall();
   });
 
 //Event handler for search by keyword
@@ -241,7 +241,7 @@ document
       return;
     }
     tastyCall();
-    spoonacularCall();
+    //spoonacularCall();
   });
 
 //add searched dishes from local storage

@@ -23,24 +23,38 @@
 
 <body>
     <nav>
-        <div id="site-icon">
-            <h2 style="color:white"><i style="font-size: 30px" class="far fa-heart"></i> FoodieLove</h2>
-        </div>
-
+        <h2 style="color:white"><i class="far fa-heart"></i> FoodieLove</h2>
+        <ul class="social">
+            <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <section class="mid-section">
         <div id="container" hidden="true">
             <header class="header">
-                <h1>What are you feeling like today?</h1>
+                <h1><b>What are you feeling like today?</b></h1>
             </header>
             <div class="search">
                 <form class="keyword">
                     <label class="search-header"></label>
-                    <input class="keyword-search" type="text" autofocus="true" id="keyword-input"
-                        placeholder="Search By Keyword">
+                    <input class="input is-small is-round keyword-search" type="text" autofocus="true"
+                        id="keyword-input" placeholder="Search By Keyword">
                 </form>
             </div>
-            <div class="dropdown" hidden="true">
+            <div class="dropdown select is-small is-rounded" hidden>
                 <select class="cuisine" id="cuisine">
                     <option value="" disabled selected>Choose a Cuisine</option>
                     <option value="African">African</option>
@@ -70,6 +84,14 @@
             </div>
         </div>
     </section>
+
+    <footer id="footer">
+        <p class="license"><a href="https://bootcamp.learn.utoronto.ca" target="_blank" rel="noopener"><i
+                    class="far fa-copyright"></i>&nbsp2021 UofT SCS Coding Boot Camp</a></p>
+        <p><a class="team" href="https://github.com/jasongrossman/team-2/graphs/contributors" target="_blank"
+                rel="noopener">Development Team</a></p>
+    </footer>
+
     <!-- Link to JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

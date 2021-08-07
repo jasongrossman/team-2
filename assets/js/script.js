@@ -10,26 +10,30 @@ var savedCuisine = [];
 //retrieve history from localstorage
 var addSearchedDishes = function() {
     savedCuisine.push(localStorage.getItem("dish"));
+    console.log(savedCuisine);
+    //check to see if local storage is empty or contains data
     if (savedCuisine == null) {
         console.log("No search history");
-    } else if (!searchSavedCuisine) {
+    } else {
+        //loop over array containing local storage data and create buttons for each dish with event listeners
         for (i = 0; i < savedCuisine.length; i++) {
             console.log("search history found");
             var searchSavedCuisine = document.createElement("button");
             searchSavedCuisine.setAttribute("class", "button");
-            searchSavedCuisine.setAttribute("id", "dish-history");
-            searchSavedCuisine.textContent = savedCuisine[i];
-            $("#container").append(searchSavedCuisine);
+            searchSavedCuisine.setAttribute("id", "dishHistory");
+            searchSavedCuisine.textContent = savedCuisine[i].trim();
+            //event listener for new button
+            $("#container").append(searchSavedCuisine);        
+            $("#dishHistory").click(function () {
+                $("#dishHistory").remove();
+                //update search query parameter with saved dish
+                cuisineQuery = searchSavedCuisine.textContent;
+                console.log(cuisineQuery);
+                tastyCall();
+                spoonacularCall();
+                }) ;
+            };
         }
-    } else {
-        console.log("clearing old dishes");
-        $(".dish-history").remove();
-        var searchSavedCuisine = document.createElement("button");
-        searchSavedCuisine.setAttribute("class", "button");
-        searchSavedCuisine.setAttribute("id", "dish-history");
-        searchSavedCuisine.textContent = savedCuisine;
-        $("#container").append(searchSavedCuisine);
-    }
 }
 
 // Tasty API Call Function
@@ -143,7 +147,8 @@ var tastyCall = function () {
                 document.querySelector(".recipe-container").append(recipeInstructions);
 
                 //save results to local storage
-                var saveDish = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].name));
+                var saveDish = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].slug));
+                console.log(savedCuisine);
                 addSearchedDishes();
             });
             } 

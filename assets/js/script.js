@@ -5,6 +5,36 @@ var searchDish = document.getElementById("keyword");
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
 var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5";
 var cuisineQuery = "";
+var savedCuisine = [];
+
+//retrieve history from localstorage
+var addSearchedDishes = function() {
+    savedCuisine.push(localStorage.getItem("dish"));
+    console.log(savedCuisine);
+    //check to see if local storage is empty or contains data
+    if (savedCuisine == null) {
+        console.log("No search history");
+    } else {
+        //loop over array containing local storage data and create buttons for each dish with event listeners
+        for (i = 0; i < savedCuisine.length; i++) {
+            console.log("search history found");
+            var searchSavedCuisine = document.createElement("button");
+            searchSavedCuisine.setAttribute("class", "button");
+            searchSavedCuisine.setAttribute("id", "dishHistory");
+            searchSavedCuisine.textContent = savedCuisine[i].trim();
+            //event listener for new button
+            $("#container").append(searchSavedCuisine);        
+            $("#dishHistory").click(function () {
+                $("#dishHistory").remove();
+                //update search query parameter with saved dish
+                cuisineQuery = searchSavedCuisine.textContent;
+                console.log(cuisineQuery);
+                tastyCall();
+                spoonacularCall();
+                }) ;
+            };
+        }
+}
 
 // Tasty API Call Function
 var tastyCall = function () {
@@ -74,6 +104,7 @@ var tastyCall = function () {
           recipeIngredients.setAttribute("class", "recipe-ingredients");
           recipeIngredients.textContent = "Ingredients:";
 
+<<<<<<< HEAD
           for (
             i = 0;
             i < data.results[randomizer].sections[0].components.length;
@@ -98,6 +129,25 @@ var tastyCall = function () {
                   .measurements[0].unit.abbreviation;
             } else {
               recipeIngredientMeasure.textContent = "";
+=======
+                for (i = 0; i < data.results[randomizer].instructions.length; i++) {
+                    var recipeInstructionLi = document.createElement("li");
+                    recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
+                    recipeInstructionLi.textContent =
+                        data.results[randomizer].instructions[i].display_text;
+                    recipeInstructions.appendChild(recipeInstructionLi);
+                }
+                document.querySelector(".recipe-container").append(recipeInstructions);
+
+                //save results to local storage
+                var saveDish = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].slug));
+                console.log(savedCuisine);
+                addSearchedDishes();
+            });
+            } 
+          else {
+              alert("There was an error!")
+>>>>>>> develop
             }
             recipeIngredientLi.appendChild(recipeIngredientMeasure);
             recipeIngredients.appendChild(recipeIngredientLi);
@@ -144,6 +194,7 @@ var spoonacularCall = function () {
       return response.json();
     })
 
+<<<<<<< HEAD
     .then(function (data) {
       //create container to hold wine pairing response:
       var winePairing = document.createElement("div");
@@ -178,6 +229,43 @@ var spoonacularCall = function () {
       winePairing.appendChild(wineLink);
       document.querySelector("body").append(winePairing);
     });
+=======
+        .then(function (data) {
+            console.log(data);
+            //create container to hold wine pairing response:
+            var winePairing = document.createElement("div");
+            winePairing.setAttribute("class", "wine-pairing box");
+            var wineChoice = document.createElement("h2");
+            wineChoice.textContent =
+                "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
+            var wineDescription = document.createElement("p");
+            wineDescription.textContent = data.pairingText;
+            winePairing.appendChild(wineChoice);
+            winePairing.appendChild(wineDescription);
+            // Details of wine pairing
+            var wineDetails = document.createElement("p");
+            wineDetails.setAttribute("class", "wine-details");
+            wineDetails.textContent = data.productMatches[0].description;
+            winePairing.appendChild(wineDetails);
+            // Wine logo
+            var wineImgDiv = document.createElement("div");
+            wineImgDiv.setAttribute("class", "wine-img");
+            var wineImg = document.createElement("img");
+            wineImg.setAttribute("src", data.productMatches[0].imageUrl);
+            winePairing.appendChild(wineImgDiv);
+            wineImgDiv.appendChild(wineImg);
+            // Link to order wine
+            var wineLink = document.createElement("a");
+            wineLink.setAttribute("class", "wine");
+            wineLink.setAttribute("href", data.productMatches[0].link);
+            // Link opens new browser
+            wineLink.setAttribute("target", "_blank");
+            wineLink.setAttribute("rel", "noopener");
+            wineLink.innerHTML = "ORDER YOUR WINE HERE";
+            winePairing.appendChild(wineLink);
+            document.querySelector("body").append(winePairing);
+        });
+>>>>>>> develop
 };
 
 //Event handler for search by cuisine
@@ -194,6 +282,7 @@ document
   });
 
 //Event handler for search by keyword
+<<<<<<< HEAD
 document
   .querySelector("#keyword-search")
   .addEventListener("click", function () {
@@ -205,3 +294,18 @@ document
     tastyCall();
     //spoonacularCall();
   });
+=======
+document.querySelector("#keyword-search")
+    .addEventListener("click", function () {
+        cuisineQuery = selectedKeyword.value;
+        if (cuisineQuery === "") {
+            alert("Please choose a cuisine.");
+            return;
+        };
+        tastyCall();
+        spoonacularCall();
+    });
+
+//add searched dishes from local storage
+addSearchedDishes();
+>>>>>>> develop

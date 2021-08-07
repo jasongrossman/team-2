@@ -5,6 +5,32 @@ var searchDish = document.getElementById("keyword");
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
 var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5";
 var cuisineQuery = "";
+var savedCuisine = [];
+
+//retrieve history from localstorage
+var addSearchedDishes = function() {
+    savedCuisine.push(localStorage.getItem("dish"));
+    if (savedCuisine == null) {
+        console.log("No search history");
+    } else if (!searchSavedCuisine) {
+        for (i = 0; i < savedCuisine.length; i++) {
+            console.log("search history found");
+            var searchSavedCuisine = document.createElement("button");
+            searchSavedCuisine.setAttribute("class", "button");
+            searchSavedCuisine.setAttribute("id", "dish-history");
+            searchSavedCuisine.textContent = savedCuisine[i];
+            $("#container").append(searchSavedCuisine);
+        }
+    } else {
+        console.log("clearing old dishes");
+        $(".dish-history").remove();
+        var searchSavedCuisine = document.createElement("button");
+        searchSavedCuisine.setAttribute("class", "button");
+        searchSavedCuisine.setAttribute("id", "dish-history");
+        searchSavedCuisine.textContent = savedCuisine;
+        $("#container").append(searchSavedCuisine);
+    }
+}
 
 // Tasty API Call Function
 var tastyCall = function () {
@@ -117,12 +143,8 @@ var tastyCall = function () {
                 document.querySelector(".recipe-container").append(recipeInstructions);
 
                 //save results to local storage
-                var savedCuisine = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].name));
-                var searchSavedCuisine = document.createElement("button");
-                searchSavedCuisine.setAttribute("class", "button");
-                searchSavedCuisine.textContent = JSON.parse(localStorage.getItem("dish"));
-                $("#container").append(searchSavedCuisine);
-                console.log(savedCuisine);
+                var saveDish = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].name));
+                addSearchedDishes();
             });
             } 
           else {
@@ -208,3 +230,6 @@ document.querySelector("#keyword-search")
         tastyCall();
         spoonacularCall();
     });
+
+//add searched dishes from local storage
+addSearchedDishes();

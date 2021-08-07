@@ -5,6 +5,36 @@ var searchDish = document.getElementById("keyword");
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
 var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5";
 var cuisineQuery = "";
+var savedCuisine = [];
+
+//retrieve history from localstorage
+var addSearchedDishes = function() {
+    savedCuisine.push(localStorage.getItem("dish"));
+    console.log(savedCuisine);
+    //check to see if local storage is empty or contains data
+    if (savedCuisine == null) {
+        console.log("No search history");
+    } else {
+        //loop over array containing local storage data and create buttons for each dish with event listeners
+        for (i = 0; i < savedCuisine.length; i++) {
+            console.log("search history found");
+            var searchSavedCuisine = document.createElement("button");
+            searchSavedCuisine.setAttribute("class", "button");
+            searchSavedCuisine.setAttribute("id", "dishHistory");
+            searchSavedCuisine.textContent = savedCuisine[i].trim();
+            //event listener for new button
+            $("#container").append(searchSavedCuisine);        
+            $("#dishHistory").click(function () {
+                $("#dishHistory").remove();
+                //update search query parameter with saved dish
+                cuisineQuery = searchSavedCuisine.textContent;
+                console.log(cuisineQuery);
+                tastyCall();
+                spoonacularCall();
+                }) ;
+            };
+        }
+}
 
 // Tasty API Call Function
 var tastyCall = function () {
@@ -105,17 +135,23 @@ var tastyCall = function () {
                     recipeInstructions.setAttribute("class", "recipe-instructions");
                     recipeInstructions.textContent = "Instructions:";
 
-                    for (i = 0; i < data.results[randomizer].instructions.length; i++) {
-                        var recipeInstructionLi = document.createElement("li");
-                        recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
-                        recipeInstructionLi.textContent =
-                            data.results[randomizer].instructions[i].display_text;
-                        recipeInstructions.appendChild(recipeInstructionLi);
-                    }
-                    document.querySelector(".recipe-container").append(recipeInstructions);
-                });
-            } else {
-                alert("There was an error!")
+                for (i = 0; i < data.results[randomizer].instructions.length; i++) {
+                    var recipeInstructionLi = document.createElement("li");
+                    recipeInstructionLi.setAttribute("class", "recipe-instruction-li");
+                    recipeInstructionLi.textContent =
+                        data.results[randomizer].instructions[i].display_text;
+                    recipeInstructions.appendChild(recipeInstructionLi);
+                }
+                document.querySelector(".recipe-container").append(recipeInstructions);
+
+                //save results to local storage
+                var saveDish = localStorage.setItem("dish", JSON.stringify(data.results[randomizer].slug));
+                console.log(savedCuisine);
+                addSearchedDishes();
+            });
+            } 
+          else {
+              alert("There was an error!")
             }
         })
         .catch(function (error) {
@@ -138,6 +174,7 @@ var spoonacularCall = function () {
         })
 
         .then(function (data) {
+            console.log(data);
             //create container to hold wine pairing response:
             var winePairing = document.createElement("div");
             winePairing.setAttribute("class", "wine-pairing box");
@@ -196,3 +233,6 @@ document.querySelector("#keyword-search")
         tastyCall();
         spoonacularCall();
     });
+
+//add searched dishes from local storage
+addSearchedDishes();

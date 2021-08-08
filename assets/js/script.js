@@ -2,14 +2,18 @@
 var selectedCuisine = document.getElementById("cuisine");
 var selectedKeyword = document.getElementById("keyword-input");
 var searchDish = document.getElementById("keyword");
+var dishHistory = $("#dishHistory");
 var apiKey = "edb7bd45b42b44c687e56d5221325bf5";
 var rapidApiKey = "6f3cad5e5dmsh811feec8278bfb6p1822bfjsn3265e0b150b5";
 var cuisineQuery = "";
 var savedCuisine = [];
 
-//retrieve history from localstorage
+//retrieve history from local storage
 var addSearchedDishes = function () {
   savedCuisine.push(localStorage.getItem("dish"));
+  if (savedCuisine.length > 4) {
+    savedCuisine.shift();
+  }
   console.log(savedCuisine);
   //check to see if local storage is empty or contains data
   if (savedCuisine == null) {
@@ -20,19 +24,20 @@ var addSearchedDishes = function () {
       console.log("search history found");
       var searchSavedCuisine = document.createElement("button");
       searchSavedCuisine.setAttribute("class", "button");
-      searchSavedCuisine.setAttribute("id", "dishHistory");
+      searchSavedCuisine.setAttribute("id", "dishHistory" + i);
       searchSavedCuisine.textContent = savedCuisine[i].trim();
       //event listener for new button
-      $("#container").append(searchSavedCuisine);
-      $("#dishHistory").click(function () {
-        $("#dishHistory").remove();
-        //update search query parameter with saved dish
-        cuisineQuery = searchSavedCuisine.textContent;
-        console.log(cuisineQuery);
-        tastyCall();
-        spoonacularCall();
-      });
+      dishHistory.append(searchSavedCuisine);
     }
+    $(".button").click(function () {
+      dishHistory.empty();
+      console.log($(this));
+      //$(this).remove();
+      //update search query parameter with saved dish
+      cuisineQuery = $(this).text();
+      console.log(cuisineQuery);
+      tastyCall();
+    });
   }
 };
 
@@ -150,11 +155,9 @@ var tastyCall = function () {
             .querySelector(".recipe-container")
             .append(recipeInstructions);
           spoonacularCall();
+
           //save results to local storage
-          var saveDish = localStorage.setItem(
-            "dish",
-            JSON.stringify(data.results[randomizer].slug)
-          );
+          localStorage.setItem("dish", data.results[randomizer].slug);
           console.log(savedCuisine);
           addSearchedDishes();
         });
@@ -182,11 +185,12 @@ var spoonacularCall = function () {
     })
 
     .then(function (data) {
-      console.log(data);
+      console.log(data); //if data.statue != failure then continrue
       //create container to hold wine pairing response:
       var winePairing = document.createElement("div");
       winePairing.setAttribute("class", "wine-pairing box");
       var wineChoice = document.createElement("h2");
+      // if statuement if there is not wine
       wineChoice.textContent =
         "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
       var wineDescription = document.createElement("p");

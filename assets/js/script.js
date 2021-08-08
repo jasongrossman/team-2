@@ -190,35 +190,45 @@ var spoonacularCall = function () {
       var winePairing = document.createElement("div");
       winePairing.setAttribute("class", "wine-pairing box");
       var wineChoice = document.createElement("h2");
-      // if statuement if there is not wine
-      wineChoice.textContent =
-        "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
-      var wineDescription = document.createElement("p");
-      wineDescription.textContent = data.pairingText;
-      winePairing.appendChild(wineChoice);
-      winePairing.appendChild(wineDescription);
-      // Details of wine pairing
-      var wineDetails = document.createElement("p");
-      wineDetails.setAttribute("class", "wine-details");
-      wineDetails.textContent = data.productMatches[0].description;
-      winePairing.appendChild(wineDetails);
-      // Wine logo
-      var wineImgDiv = document.createElement("div");
-      wineImgDiv.setAttribute("class", "wine-img");
-      var wineImg = document.createElement("img");
-      wineImg.setAttribute("src", data.productMatches[0].imageUrl);
-      winePairing.appendChild(wineImgDiv);
-      wineImgDiv.appendChild(wineImg);
-      // Link to order wine
-      var wineLink = document.createElement("a");
-      wineLink.setAttribute("class", "wine");
-      wineLink.setAttribute("href", data.productMatches[0].link);
-      // Link opens new browser
-      wineLink.setAttribute("target", "_blank");
-      wineLink.setAttribute("rel", "noopener");
-      wineLink.innerHTML = "ORDER YOUR WINE HERE";
-      winePairing.appendChild(wineLink);
-      document.querySelector("body").append(winePairing);
+      console.log(data.status);
+      // if statement if there is wine
+      if (data.status != "failure") {
+        wineChoice.textContent =
+          "RECOMMENDED WINE PAIRING: " + data.pairedWines[0].toUpperCase();
+        var wineDescription = document.createElement("p");
+        wineDescription.textContent = data.pairingText;
+        winePairing.appendChild(wineChoice);
+        winePairing.appendChild(wineDescription);
+        // Details of wine pairing
+        var wineDetails = document.createElement("p");
+        wineDetails.setAttribute("class", "wine-details");
+        wineDetails.textContent = data.productMatches[0].description;
+        winePairing.appendChild(wineDetails);
+        // Wine logo
+        var wineImgDiv = document.createElement("div");
+        wineImgDiv.setAttribute("class", "wine-img");
+        var wineImg = document.createElement("img");
+        wineImg.setAttribute("src", data.productMatches[0].imageUrl);
+        winePairing.appendChild(wineImgDiv);
+        wineImgDiv.appendChild(wineImg);
+        // Link to order wine
+        var wineLink = document.createElement("a");
+        wineLink.setAttribute("class", "wine");
+        wineLink.setAttribute("href", data.productMatches[0].link);
+        // Link opens new browser
+        wineLink.setAttribute("target", "_blank");
+        wineLink.setAttribute("rel", "noopener");
+        wineLink.innerHTML = "ORDER YOUR WINE HERE";
+        winePairing.appendChild(wineLink);
+        document.querySelector("body").append(winePairing);
+        //Else statement in the case there is no wine
+      } else {
+        var noWine = document.createElement("p");
+        noWine.textContent =
+          "Although there are plenty of options to choose from and given our high standard and search for perfection we are unable to provide the perfect wine pairing with this specific meal. ";
+        winePairing.appendChild(noWine);
+        document.querySelector("body").append(winePairing);
+      }
     });
 };
 
@@ -250,3 +260,13 @@ document
 
 //add searched dishes from local storage
 addSearchedDishes();
+
+//Enter Functionality to the code. If Keyword search has info in it, when
+//user presses enter the search by keyword button will be pressed instead of refreshing
+$("#keyword-input").keypress(function (event) {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    //alert("Enter Was Clicked");
+    $("#keyword-search").click();
+  }
+});

@@ -157,7 +157,7 @@ var tastyCall = function () {
           spoonacularCall();
 
           //save results to local storage
-          localStorage.setItem("dish", data.results[randomizer].slug);
+          localStorage.setItem("dish", data.results[randomizer].name);
           console.log(savedCuisine);
           addSearchedDishes();
         });

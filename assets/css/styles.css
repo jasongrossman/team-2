@@ -37,6 +37,7 @@ nav {
 
 nav ul {
   display: flex;
+  flex-direction: row;
 }
 
 .fa-heart {

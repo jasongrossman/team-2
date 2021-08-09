@@ -24,6 +24,20 @@ nav {
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+.logo {
+  position: -webkit-sticky;
+  position: sticky;
+  display: inline-block;
+  width: 190px;
+  height: 100px;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+>>>>>>> b1a562dd3ca87ee75037f2664f9a6fa5762c8f78
 nav ul {
   display: flex;
 }
@@ -220,6 +234,7 @@ ul {
 
 .wine {
   color: white;
+<<<<<<< HEAD
 }
 
 /*.recipe-ingredients,
@@ -239,6 +254,27 @@ ul {
   margin-top: 15px;
 }
 
+=======
+}
+
+/*.recipe-ingredients,
+.recipe-instructions {
+  margin-top: 15px;
+}*/
+
+.recipe-ingredients li {
+  list-style: circle;
+}
+
+.recipe-instructions li {
+  list-style: decimal;
+}
+
+.wine-details {
+  margin-top: 15px;
+}
+
+>>>>>>> b1a562dd3ca87ee75037f2664f9a6fa5762c8f78
 #footer {
   position: fixed;
   left: 0;

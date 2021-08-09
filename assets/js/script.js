@@ -14,7 +14,6 @@ var addSearchedDishes = function () {
   if (savedCuisine.length > 4) {
     savedCuisine.shift();
   }
-  console.log(savedCuisine);
   //check to see if local storage is empty or contains data
   if (savedCuisine == null) {
     console.log("No search history");
@@ -31,11 +30,9 @@ var addSearchedDishes = function () {
     }
     $(".button").click(function () {
       dishHistory.empty();
-      console.log($(this));
       //$(this).remove();
       //update search query parameter with saved dish
       cuisineQuery = $(this).text();
-      console.log(cuisineQuery);
       tastyCall();
     });
   }
@@ -92,8 +89,8 @@ var tastyCall = function () {
           var cookingTime = document.createElement("h4");
           cookingTime.setAttribute("class", "cooking-time");
           if (data.results[randomizer].cook_time_minutes == null) {
-            // console.log("There are no cooking time details");
-          } else {
+
+        } else {
             cookingTime.textContent =
               "Cooking time: " +
               data.results[randomizer].cook_time_minutes +
@@ -158,7 +155,6 @@ var tastyCall = function () {
 
           //save results to local storage
           localStorage.setItem("dish", data.results[randomizer].name);
-          console.log(savedCuisine);
           addSearchedDishes();
         });
       } else {
@@ -185,12 +181,10 @@ var spoonacularCall = function () {
     })
 
     .then(function (data) {
-      console.log(data); //if data.statue != failure then continrue
       //create container to hold wine pairing response:
       var winePairing = document.createElement("div");
       winePairing.setAttribute("class", "wine-pairing box");
       var wineChoice = document.createElement("h2");
-      console.log(data.status);
       // if statement if there is wine
       if (data.status != "failure") {
         wineChoice.textContent =

@@ -1,60 +1,70 @@
-:root 
-{
-    --primary-color: #4E598C;
-    --secondary-color: #FF8C42;
-    --tertiary-color: #FCAF58; 
+:root {
+  --primary-color: #4e598c;
+  --secondary-color: #ff8c42;
+  --tertiary-color: #fcaf58;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
-  font-family: "Roboto";
+  background-color: #4e598c;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
   z-index: 9999;
-    position: -webkit-sticky;
-    position:sticky;
-    top: 0;
+  /* -webkit-sticky for Safari Browser */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   background-color: var(--primary-color);
-  height: 80px;
+  height: 10vh;
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
-  /* background-image: url('../images/louis-hansel-cH5IPjaAYyo-unsplash.jpg'); */
-  /* background-size: cover;
-  background-position: center;
-  background-attachment: fixed; */
 }
 
-#icon-text {
+.logo {
+  position: -webkit-sticky;
+  position: sticky;
+  display: inline-block;
+  width: 190px;
+  height: 100px;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+nav ul {
   display: flex;
-  background-color: rgba(255, 109, 0, 0.8);
-  border-radius: 10px;
-  height: 75%;
-  align-items: center;
 }
 
-#icon-text h2 {
-  padding-left: 5px;
-  padding-right: 5px;
+.fa-heart {
+  font-size: 35px;
 }
 
-#top-right-icons {
-  display: flex;
-  flex-direction: row;
+/* Social Media Icons */
+.social i {
+  font-size: 40px;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.social i:hover,
+.social i:focus {
+  color: var(--tertiary-color);
+}
+
+.social .fa-facebook-square {
   color: white;
-  justify-content: center;
 }
 
-#top-right-icons i {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 7px 7px;
+.social .fa-twitter-square {
+  color: white;
+}
+
+.social .fa-instagram-square {
+  color: white;
 }
 
 .mid-section {
@@ -64,19 +74,22 @@ nav {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 90vh;
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: 15% auto;
+  position: static;
+  margin: auto;
   width: 500px;
-  border-radius: 20px;
+  /* height: 35vh; */
+  border-radius: 30px;
   justify-content: center;
   background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
 }
+
 .header {
   display: flex;
   justify-content: center;
@@ -92,23 +105,29 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
 .search {
   display: flex;
   justify-content: center;
   padding-top: auto;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
-.dropdown {
+.dropdown.select.is-small.is-rounded {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
-  margin: 5px;
-  padding-bottom: 10px;
+  margin-top: 5px;
+  align-items: center;
+  margin: auto;
+  height: 45px;
+  width: 150px;
 }
+
+/* #cuisine {
+  margin: auto;
+} */
 
 .button {
   padding: 10px;
@@ -116,19 +135,13 @@ nav {
   border-radius: 12px;
   cursor: pointer;
   background-color: var(--primary-color);
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   color: white;
-  
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--tertiary-color);
-<<<<<<< HEAD
-  ;
-
-=======
-  
->>>>>>> 4b3c4c29b9b9ed5a9d306fee6e3fe29fb9d85f9f
 }
 
 .button:active {
@@ -144,19 +157,18 @@ p {
 
 .keyword-search {
   align-items: center;
-  /* margin-left: 35%; */
-  /* text-align: center; */
+  text-align: center;
 }
 
 h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-size: 35px;
-  color: #3c096c;
+  font-size: 40px;
+  color: var(--primary-color);
 }
 
 p,
 li {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* Wine and Recipe Img */
@@ -164,25 +176,28 @@ li {
 .recipe-img {
   display: flex;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
-  border-radius: 10px;
   margin: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
 }
 
 .wine-img {
   width: 40%;
   margin-bottom: 30px;
   margin-top: 30px;
+  border-radius: 5px;
 }
+
 .recipe-img {
-  width: 75%;
+  width: 60%;
   margin-bottom: 30px;
+  border-radius: 10px;
 }
 
 /* Wine link */
 a {
   display: flex;
-  font-size: 15px;
+  color: var(--primary-color);
+  font-size: 25px;
   justify-content: center;
   padding: 25px;
   text-decoration: none;
@@ -200,15 +215,122 @@ ul {
   line-height: 1.5;
 }
 
-#top-right-icons:hover {
-  opacity: 80%;
-  color: #F9C784;
+.box {
+  width: 80%;
+  margin-left: 10%;
+  background-color: rgba(255, 109, 0, 0.8);
+  margin-top: 5%;
+  margin-bottom: 60px;
+  padding: 20px 30px 40px 30px;
+  color: white;
 }
 
+.box h2 {
+  color: white;
+}
 
-#top-right-icons i {
+.wine {
+  color: white;
+}
+
+/*.recipe-ingredients,
+.recipe-instructions {
+  margin-top: 15px;
+}*/
+
+.recipe-ingredients li {
+  list-style: circle;
+}
+
+.recipe-instructions li {
+  list-style: decimal;
+}
+
+.wine-details {
+  margin-top: 15px;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 12px;
+  justify-content: space-between;
+}
+
+#footer a {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.fa-copyright {
+  padding-top: 3px;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  h2,
+  .fa-heart,
+  .social i {
+    font-size: 30px;
+  }
+}
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+  h2,
+  .fa-heart,
+  .social i {
+    font-size: 25px;
+  }
+
+  #container {
+    width: 400px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  p,
+  li {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .recipe-img {
+    width: 50%;
+  }
+
+  .wine-img {
+    width: 30%;
+  }
+
+  a {
+    font-size: 15px;
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  #container {
+    width: 350px;
+  }
+
+  .button {
+    border-radius: 45px;
+  }
+
+  h2,
+  h4,
+  ul {
+    font-size: 20px;
+  }
+
+  #footer a {
+    font-size: 10px;
+  }
 }

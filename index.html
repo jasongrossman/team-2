@@ -8,7 +8,8 @@
     <title>Foodie</title>
     <!-- Link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
     <!-- Link to Bulma -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <!-- Link to Font Awesome -->
@@ -22,31 +23,47 @@
 
 <body>
     <nav>
-        <div id="site-icon">
-            <a href="#"><h2 style="color:white">FoodieLove</h2></a>
-        </div>
+        <a href="https://jasongrossman.github.io/team-2/"> <img src="./assets/images/logo.png" class id="logo">
+        </a>
+        
+        
+        <ul class="social">
+            <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <section class="mid-section">
-
         <div id="container" hidden="true">
             <header class="header">
-                <h1>What are you feeling like today?</h1>
+                <h1><b>What are you feeling like today?</b></h1>
             </header>
             <div class="search">
                 <form class="keyword">
                     <label class="search-header"></label>
-                    <input class="keyword-search" type="text" autofocus="true" id="keyword-input"
-                        placeholder="Search By Keyword">
+                    <input class="input is-small is-round keyword-search" type="text" autofocus="true"
+                        id="keyword-input" placeholder="Search By Keyword">
                 </form>
             </div>
-            <div class="dropdown" hidden="true">
+            <div class="dropdown select is-small is-rounded" hidden>
                 <select class="cuisine" id="cuisine">
                     <option value="" disabled selected>Choose a Cuisine</option>
                     <option value="African">African</option>
-                    <option value="American">American</option>
-                    <option value="British">British</option>
+                    <option value="American">American (Recipes only)</option>
+                    <option value="British">British (Recipes only)</option>
                     <option value="Cajun">Cajun</option>
-                    <option value="Caribbean">Caribbean</option>
                     <option value="Chinese">Chinese</option>
                     <option value="Greek">Greek</option>
                     <option value="French">French</option>
@@ -55,25 +72,36 @@
                     <option value="Indian">Indian</option>
                     <option value="Japanese">Japanese</option>
                     <option value="Korean">Korean</option>
-                    <option value="Latin-American">Latin American (Food only)</option>
-                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Latin-American">Latin American (Recipes only)</option>
+                    <option value="Mediterranean">Mediterranean (Recipes only)</option>
                     <option value="Mexican">Mexican</option>
-                    <option value="Middle-Eastern">Middle Eastern (Food only)</option>
+                    <option value="Middle-Eastern">Middle Eastern (Recipes only)</option>
                     <option value="Spanish">Spanish</option>
                     <option value="Thai">Thai</option>
                     <option value="Vietnamese">Vietnamese</option>
-                    <option value="Random">Random</option>
                 </select>
             </div>
             <div class="intro">
                 <button class="button" id="keyword-search">Search by Keyword</button>
                 <button class="button" id="cuisine-search">Search by Cuisine</button>
             </div>
+            <div id="dishHistory"></div>
+        </div>
     </section>
+
+    <footer id="footer">
+        <p class="license"><a href="https://bootcamp.learn.utoronto.ca" target="_blank" rel="noopener"><i
+                    class="far fa-copyright"></i>&nbsp2021 UofT SCS Coding Boot Camp</a></p>
+        <p><a class="team" href="https://github.com/jasongrossman/team-2/graphs/contributors" target="_blank"
+                rel="noopener">Development Team</a></p>
+    </footer>
+
+    <!-- Link to JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+    </script>
+    <!-- Link to external JS file -->
     <script src="./assets/js/script.js"></script>
 </body>
 
